@@ -1,0 +1,9 @@
+.app-footer{
+    position: fixed;
+    bottom:30px;
+    right:30px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
