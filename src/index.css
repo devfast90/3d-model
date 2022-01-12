@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Hanno;
+  src: url(../src/assets/fonts/HanoRegular.otf);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

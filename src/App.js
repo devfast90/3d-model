@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import PreSale from "./pages/LandingScene";
+import PreSale from "./pages/PreSale";
 
 export default function App() {
   return (
