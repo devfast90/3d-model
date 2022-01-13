@@ -1,0 +1,82 @@
+.text-container{
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.text-container .first-content{
+
+}
+
+.screen3 .scroll-contents .scroll-content1{
+    height: 100vh;
+    background: red;
+}
+
+.screen3 .scroll-contents .scroll-content2{
+    height: 50vh;
+    background: yellow;
+}
+
+.screen3 .scroll-contents .scroll-content3{
+    height: 50vh;
+    background: green;
+}
+
+.image-modal{
+    flex: 1;
+    background-image: url('/public/images/screen3/actor.png'), url('/public/images/screen3/mesh.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.screen3 .header1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 450px;
+}
+
+.screen3 .header1.forward-animation{
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    transform: translateY(-50px);
+    opacity: 0;
+    animation-name: titleAnimation;
+    animation-timing-function:ease;
+    animation-duration: 3s;
+}
+
+@keyframes titleAnimation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+        -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+        clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    }
+}
