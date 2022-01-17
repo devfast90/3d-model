@@ -1,6 +1,5 @@
 .sticky-view-container{
     position: relative;
-    height: 300vh;
 }
 
 .sticky-view{
@@ -8,7 +7,4 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

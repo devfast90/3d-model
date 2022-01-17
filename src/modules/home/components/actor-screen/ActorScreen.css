@@ -3,24 +3,12 @@
     width: 100%;
 }
 
-.actor-screen .scroll-contents .scroll-content1{
-    height: 105vh;
-    background: red;
-}
-
-.actor-screen .scroll-contents .scroll-content2{
-    height: 10vh;
-    background: yellow;
-}
-
-.actor-screen .scroll-contents .scroll-content3{
-    height: 10vh;
-    background: green;
-}
-
-.actor-screen .scroll-contents .scroll-content4{
-    height: 10vh;
-    background: blue;
+.text-container{
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-modal{
@@ -28,23 +16,11 @@
     position: relative;
 }
 
-.image-modal.first-part .actor{
-    height: 33.33%;
-}
-
-.image-modal.second-part .actor{
-    height: 66.66%;
-}
-
-.image-modal.third-part .actor{
-    height: 100%;
-}
-
 .image-modal .actor,
 .image-modal .mash{
     height: 100%;
-    background-size: auto 90%;
-    background-position: bottom center;
+    background-size: auto calc(100vh - 100px);
+    background-position: center 100px;
     background-repeat: no-repeat;
     position: absolute;
     top:0;
@@ -55,12 +31,16 @@
 
 .image-modal .actor{
     background-image: url('/public/images/actor-screen/actor.png');
-    height: 33.33%;
-    transition: all 2s;
 }
 
 .image-modal .mash{
     background-image: url('/public/images/actor-screen/mesh.png');
+    transform: translate(0, 100vh);
+    transition: all 2s;
+}
+
+.image-modal .mash.to-top{
+    transform: translate(0, 0);
 }
 
 .actor-screen .header1{

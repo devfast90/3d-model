@@ -3,9 +3,7 @@ import Header from "./modules/layout/header/Header";
 import SideText from "./modules/layout/side-text/SideText";
 import Footer from "./modules/layout/footer/Footer";
 import ScrollContainer from "./modules/home/components/scroll-container/ScrollContainer";
-import SquareWithTextScreen from "./modules/home/components/square-with-text-screen/SquareWithTextScreen";
-import SquareWithVideoScreen from "./modules/home/components/square-with-video-screen/SquareWithVideoScreen";
-import StickyView from "./modules/home/components/sticky-view/StickyView";
+import SquareScreen from "./modules/home/components/square-screen/SquareScreen";
 import ActorScreen from "./modules/home/components/actor-screen/ActorScreen";
 
 export default function App() {
@@ -15,9 +13,7 @@ export default function App() {
         <SideText />
         <Footer />
         <ScrollContainer>
-            <ActorScreen />
-            <SquareWithTextScreen />
-            <SquareWithVideoScreen />
+            <ActorScreen scrollContainerHeight={'600vh'}/>
         </ScrollContainer>
       {/*<Routes>*/}
       {/*  <Route index element={<PreSale />} />*/}
