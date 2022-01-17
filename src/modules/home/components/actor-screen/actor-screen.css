@@ -11,19 +11,24 @@
 
 }
 
-.screen3 .scroll-contents .scroll-content1{
+.actor-screen .scroll-contents .scroll-content1{
     height: 105vh;
     background: red;
 }
 
-.screen3 .scroll-contents .scroll-content2{
-    height: 50vh;
+.actor-screen .scroll-contents .scroll-content2{
+    height: 100vh;
     background: yellow;
 }
 
-.screen3 .scroll-contents .scroll-content3{
-    height: 50vh;
+.actor-screen .scroll-contents .scroll-content3{
+    height: 100vh;
     background: green;
+}
+
+.actor-screen .scroll-contents .scroll-content4{
+    height: 100vh;
+    background: blue;
 }
 
 .image-modal{
@@ -57,15 +62,16 @@
 }
 
 .image-modal .actor{
-    background-image: url('/public/images/screen3/actor.png');
+    background-image: url('/public/images/actor-screen/actor.png');
+    height: 33.33%;
     transition: all 2s;
 }
 
 .image-modal .mash{
-    background-image: url('/public/images/screen3/mesh.png');
+    background-image: url('/public/images/actor-screen/mesh.png');
 }
 
-.screen3 .header1{
+.actor-screen .header1{
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 80px;
