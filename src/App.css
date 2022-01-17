@@ -1,6 +1,9 @@
-/*.App {*/
-/*  text-align: center;*/
-/*}*/
+.App {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .App{
   --header-height: 100px;

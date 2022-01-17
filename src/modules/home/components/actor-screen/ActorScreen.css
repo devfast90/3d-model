@@ -1,14 +1,6 @@
-.text-container{
+.actor-screen{
     display: flex;
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-}
-
-.text-container .first-content{
-
+    width: 100%;
 }
 
 .actor-screen .scroll-contents .scroll-content1{
@@ -17,17 +9,17 @@
 }
 
 .actor-screen .scroll-contents .scroll-content2{
-    height: 100vh;
+    height: 10vh;
     background: yellow;
 }
 
 .actor-screen .scroll-contents .scroll-content3{
-    height: 100vh;
+    height: 10vh;
     background: green;
 }
 
 .actor-screen .scroll-contents .scroll-content4{
-    height: 100vh;
+    height: 10vh;
     background: blue;
 }
 

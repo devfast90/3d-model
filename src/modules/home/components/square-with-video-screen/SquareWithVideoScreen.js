@@ -10,11 +10,5 @@ export default function SquareWithVideoScreen(){
                </div>
            </div>
         </div>
-        {/*<div className={`scroll-contents`}>*/}
-        {/*    <div ref={firstScrollContentRef} className={'scroll-content1'} />*/}
-        {/*    <div ref={secondScrollContentRef} className={'scroll-content2'} />*/}
-        {/*    <div ref={thirdScrollContentRef} className={'scroll-content3'} />*/}
-        {/*    <div ref={thirdScrollContentRef} className={'scroll-content4'} />*/}
-        {/*</div>*/}
     </div>
 }

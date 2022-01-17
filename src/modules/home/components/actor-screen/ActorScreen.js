@@ -1,8 +1,5 @@
-import Header from "../../../layout/header/Header";
-import Footer from "../../../layout/footer/Footer";
-import SideText from "../../../layout/side-text/SideText";
 import Header1 from "../../../shared/components/header1/Header1";
-import './actor-screen.css';
+import './ActorScreen.css';
 import {useRef} from "react";
 import useOnScreen from "../../../shared/hooks/useOnScreen";
 
