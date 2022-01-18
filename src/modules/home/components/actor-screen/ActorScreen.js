@@ -5,11 +5,6 @@ import {useEffect, useState} from "react";
 
 export default function ActorScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight, offsetSelector: '.actor-screen'});
-    const [scrollMashToTop, setScrollMashToTop] = useState();
-
-    useEffect(()=>{
-        setScrollMashToTop(true);
-    }, []);
 
     return <>
         <div className={'actor-screen'}>
@@ -25,8 +20,8 @@ export default function ActorScreen({scrollContainerHeight}) {
                 </Header1>}
             </div>
             <div className={'image-modal'}>
-                <div className={'mash' + ` ${scrollMashToTop ? 'to-top': ''}`}/>
-                <div className={'actor'} style={{height: `${Math.min(scrollRatio,1)*100}%`}}/>
+                <div className={'mash'} style={{height: `${Math.min(scrollRatio * 2,1)*100}%`}}/>
+                <div className={'actor'} style={{height: `${((scrollRatio - 0.5)*2)*100}%`}}/>
             </div>
         </div>
     </>
