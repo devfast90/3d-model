@@ -4,7 +4,7 @@ import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio
 import {useEffect, useState} from "react";
 
 export default function ActorScreen({scrollContainerHeight}) {
-    const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight});
+    const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight, offsetSelector: '.actor-screen'});
     const [scrollMashToTop, setScrollMashToTop] = useState();
 
     useEffect(()=>{

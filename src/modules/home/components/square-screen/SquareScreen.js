@@ -3,11 +3,16 @@ import Header1 from "../../../shared/components/header1/Header1";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 
 export default function SquareScreen({scrollContainerHeight}){
-    const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight});
+    const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight, offsetSelector: '.square-screen'});
     const getSquareDimension = ()=>{
-        const height = Math.min(scrollRatio * 100, 60);
-        console.log(height, scrollRatio, scrollRatio* 100);
-        return {height: `calc(${height}vh - calc(2 * var(--header-height)))`};
+        if(scrollRatio<0){
+            const scrollRatioAbs = Math.abs(scrollRatio);
+            const height = Math.min( 100 * (1.50 - scrollRatioAbs));
+            console.log(height, scrollRatioAbs, scrollRatioAbs* 100);
+            return {height: `calc(${height}vh - calc(2 * var(--header-height)))`};
+        } else {
+
+        }
     }
     return <div className={'square-screen'}>
         <div className={'screen-container'}>
