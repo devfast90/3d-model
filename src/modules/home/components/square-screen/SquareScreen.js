@@ -1,10 +1,17 @@
 import './SquareScreen.css';
 import Header1 from "../../../shared/components/header1/Header1";
+import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 
-export default function SquareScreen({scrollRatio}){
+export default function SquareScreen({scrollContainerHeight}){
+    const scrollRatio = useWindowOnScrollRatio({scrollContainerHeight});
+    const getSquareDimension = ()=>{
+        const height = Math.min(scrollRatio * 100, 60);
+        console.log(height, scrollRatio, scrollRatio* 100);
+        return {height: `calc(${height}vh - calc(2 * var(--header-height)))`};
+    }
     return <div className={'square-screen'}>
         <div className={'screen-container'}>
-           <div className={'square'}>
+           <div className={'square'} style={getSquareDimension()}>
                <Header1 className={'square-text-container'}>
                    <span>
                        10k Fully rigged metaverse ready avatars

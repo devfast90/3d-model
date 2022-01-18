@@ -19,8 +19,8 @@
 .image-modal .actor,
 .image-modal .mash{
     height: 100%;
-    background-size: auto calc(100vh - 100px);
-    background-position: center 100px;
+    background-size: auto calc(100vh - var(--header-height));
+    background-position: center var(--header-height);
     background-repeat: no-repeat;
     position: absolute;
     top:0;
@@ -35,7 +35,7 @@
 
 .image-modal .mash{
     background-image: url('/public/images/actor-screen/mesh.png');
-    transform: translate(0, 100vh);
+    transform: translate(0, var(--header-height));
     transition: all 2s;
 }
 

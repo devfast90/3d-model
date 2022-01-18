@@ -14,6 +14,7 @@ export default function App() {
         <Footer />
         <ScrollContainer>
             <ActorScreen scrollContainerHeight={'600vh'}/>
+            <SquareScreen />
         </ScrollContainer>
       {/*<Routes>*/}
       {/*  <Route index element={<PreSale />} />*/}

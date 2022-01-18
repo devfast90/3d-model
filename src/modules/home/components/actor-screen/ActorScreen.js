@@ -25,13 +25,9 @@ export default function ActorScreen({scrollContainerHeight}) {
                 </Header1>}
             </div>
             <div className={'image-modal'}>
-                {/*<pre style={{position: 'fixed', top: 0}}>*/}
-                {/*    Height vs Scroll Ratio - {scrollRatio}*/}
-                {/*</pre>*/}
                 <div className={'mash' + ` ${scrollMashToTop ? 'to-top': ''}`}/>
                 <div className={'actor'} style={{height: `${Math.min(scrollRatio,1)*100}%`}}/>
             </div>
         </div>
-            {/*<SquareScreen />*/}
     </>
 }
