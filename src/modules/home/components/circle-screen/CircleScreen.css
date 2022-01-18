@@ -9,9 +9,17 @@
     position: relative;
 }
 
-.circle-screen .circle img{
-    max-height: 100vh;
-    max-width: 95vw;
+.circle-screen .circle-image{
+    height: 90vh;
+    width: auto;
+}
+
+.circle-screen .circle-actor-img{
+    position: absolute;
+    bottom: 5vh;
+    right: 0px;
+    height: 60vh;
+    transition: all 1s;
 }
 
 .circle-screen .text-content{
@@ -25,6 +33,20 @@
     color: white;
     opacity: 0.5;
     transition: all 1s;
+}
+
+.circle-screen .actor-text-content{
+    transition: all 1s;
+    position: absolute;
+    width: 500px;
+    top: 20px;
+    left:-300px;
+    opacity: 0;
+}
+
+.circle-screen .actor-text-content.actor-text-content-secondary{
+    top: 300px;
+    width: 250px;
 }
 /*.screen-container .square{*/
 /*    width: var(--square-width);*/

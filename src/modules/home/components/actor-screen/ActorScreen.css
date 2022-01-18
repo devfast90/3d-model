@@ -23,7 +23,6 @@
     background-position: center var(--header-height);
     background-repeat: no-repeat;
     position: absolute;
-    top:0;
     left:0;
     right:0;
     bottom:0;
@@ -31,6 +30,7 @@
 
 .image-modal .actor{
     background-image: url('/public/images/actor-screen/actor.png');
+    top:0;
 }
 
 .image-modal .mash{
