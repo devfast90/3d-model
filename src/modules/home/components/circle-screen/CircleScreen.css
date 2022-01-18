@@ -1,0 +1,61 @@
+.circle-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.circle-screen .circle{
+    position: relative;
+}
+
+.circle-screen .circle img{
+    max-height: 100vh;
+    max-width: 95vw;
+}
+
+.circle-screen .text-content{
+    top: 0;
+    position: absolute;
+    padding: 14%;
+    transition: all 1s;
+}
+
+.circle-screen .text-content span{
+    color: white;
+    opacity: 0.5;
+    transition: all 1s;
+}
+/*.screen-container .square{*/
+/*    width: var(--square-width);*/
+/*    height: var(--square-height);*/
+/*    border: 10px solid black;*/
+/*    border-radius: 40px;*/
+/*    box-sizing: border-box;*/
+/*    position: relative;*/
+/*}*/
+
+/*.screen-container .square .square-text-container{*/
+/*    position: absolute;*/
+/*    bottom: -96px;*/
+/*    left: -50px;*/
+/*    display: inline;*/
+/*    width: 500px;*/
+/*}*/
+
+/*.screen-container .square span {*/
+/*    background: white;*/
+/*}*/
+
+/*.screen-container .square .video-container{*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    border-radius: 30px;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.screen-container .square .video-container video{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*}*/

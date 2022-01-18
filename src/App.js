@@ -5,24 +5,23 @@ import Footer from "./modules/layout/footer/Footer";
 import ScrollContainer from "./modules/home/components/scroll-container/ScrollContainer";
 import SquareScreen from "./modules/home/components/square-screen/SquareScreen";
 import ActorScreen from "./modules/home/components/actor-screen/ActorScreen";
-import {Route, Routes} from "react-router-dom";
-import PreSale from './pages/PreSale';
-
+import CircleScreen from "./modules/home/components/circle-screen/CircleScreen";
 
 export default function App() {
   return (
     <div className="App">
-        {/*<Header />*/}
-        {/*<SideText />*/}
-        {/*<Footer />*/}
-        {/*<ScrollContainer>*/}
-        {/*    <ActorScreen scrollContainerHeight={'600vh'}/>*/}
-        {/*    <SquareScreen />*/}
-        {/*</ScrollContainer>*/}
-      <Routes>
-        <Route index element={<PreSale />} />
-        <Route path="pre-sale" element={<PreSale />} />
-      </Routes>
+        <Header />
+        <SideText />
+        <Footer />
+        <ScrollContainer>
+            <ActorScreen scrollContainerHeight={'600vh'}/>
+            <SquareScreen />
+            <CircleScreen />
+        </ScrollContainer>
+      {/*<Routes>*/}
+      {/*  <Route index element={<PreSale />} />*/}
+      {/*  <Route path="pre-sale" element={<PreSale />} />*/}
+      {/*</Routes>*/}
     </div>
   );
 }
