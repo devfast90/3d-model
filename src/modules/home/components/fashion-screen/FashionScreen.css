@@ -1,0 +1,25 @@
+.fashion-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100vh;
+}
+.fashion-screen .images-container{
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+}
+
+.fashion-screen .images-container img{
+    position: absolute;
+    transition: all 1s;
+    transform: translateY(100vh);
+}
+
+.fashion-screen .text-container .header1{
+    position: absolute;
+    width: 400px;
+    top: 90px;
+    left: 50%;
+}
