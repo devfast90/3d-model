@@ -1,11 +1,11 @@
-import SideText from "./modules/layout/side-text/SideText";
-import Footer from "./modules/layout/footer/Footer";
-import ScrollContainer from "./modules/home/components/scroll-container/ScrollContainer";
-import SquareScreen from "./modules/home/components/square-screen/SquareScreen";
-import ActorScreen from "./modules/home/components/actor-screen/ActorScreen";
-import CircleScreen from "./modules/home/components/circle-screen/CircleScreen";
-import FashionScreen from "./modules/home/components/fashion-screen/FashionScreen";
-import BlackScreen from "./modules/home/components/black-screen/BlackScreen";
+import SideText from "../layout/side-text/SideText";
+import Footer from "../layout/footer/Footer";
+import ScrollContainer from "../modules/home/scroll-container/ScrollContainer";
+import SquareScreen from "../modules/home/square-screen/SquareScreen";
+import ActorScreen from "../modules/home/actor-screen/ActorScreen";
+import CircleScreen from "../modules/home/circle-screen/CircleScreen";
+import FashionScreen from "../modules/home/fashion-screen/FashionScreen";
+import BlackScreen from "../modules/home/black-screen/BlackScreen";
 
 export default function App() {
   return (
