@@ -1,13 +1,5 @@
-import LandingScene from "./LandingScene";
-import { MainLogo } from "../components/MainLogo";
-
 function Presale() {
-  return (
-    <div>
-      {/* <MainLogo /> */}
-      <LandingScene />
-    </div>
-  );
+  return <div>Pre Sale Page</div>;
 }
 
 export default Presale;
