@@ -2,27 +2,3 @@
     font-size: 72px;
 }
 
-.header1.text-open-animation{
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
-    transform: translateY(-50px);
-    opacity: 0;
-    animation-name: textOpenAnimation;
-    animation-timing-function:ease;
-    animation-duration: 1.5s;
-    animation-delay: 0.1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes textOpenAnimation {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
-    }
-}
-
