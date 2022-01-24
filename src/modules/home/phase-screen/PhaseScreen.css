@@ -8,8 +8,6 @@
     background: white;
     transition: all 2s;
     padding-top: var(--header-height);
-    /*height: calc(100vh - var(--header-height));*/
-    /*height: 100vh;*/
     overflow: scroll;
 }
 
