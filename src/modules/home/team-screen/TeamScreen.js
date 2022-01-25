@@ -31,7 +31,6 @@ export default function TeamScreen({scrollContainerHeight}) {
         const rows = Array.from(Array(Math.max(Math.ceil(teamList.length / membersInRow), 1)));
         const leftPadding = (windowWidth - ((Math.min(membersInRow, teamList.length) * unitWidth) - 40));
         const rowDisplayTrigger = 1 / (rows.length+1);
-        console.log(rowDisplayTrigger);
         return {unitWidth, membersInRow, rows, leftPadding, rowDisplayTrigger};
     }, [windowWidth]);
 
@@ -62,8 +61,7 @@ export default function TeamScreen({scrollContainerHeight}) {
 
     return (
         <div className={"team-screen"}
-             style={{background: scrollRatio >= 0 ? "white" : "black",
-                 overflowY:"hidden"}}>
+             style={{overflowY:"hidden"}}>
             <div className={'title'}>
                 <img src={titleIcon}/> <br/>
                 <Header1>The team</Header1>
