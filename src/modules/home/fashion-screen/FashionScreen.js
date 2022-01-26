@@ -1,49 +1,7 @@
 import "./FashionScreen.css";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
-import arrowImg from "../../../assets/images/fashion-screen/arrow.png";
-import maskImg from "../../../assets/images/fashion-screen/mask.png";
-import orangeJacketImg from "../../../assets/images/fashion-screen/orange-jacket.png";
-import pinkJacketImg from "../../../assets/images/fashion-screen/pink-jacket.png";
-import shoeImg from "../../../assets/images/fashion-screen/shoes.png";
-
-const imageList = [
-  {
-    imageSrc: pinkJacketImg,
-    style: { top: -50, left: 0, height: 200 },
-    transformTrigger: 0
-  },
-  {
-    imageSrc: shoeImg,
-    style: { top: 20, left: "50%", height: 120 },
-    transformTrigger: 0.2
-  },
-  {
-    imageSrc: arrowImg,
-    style: { top: 300, left: 150, height: 100 },
-    transformTrigger: 0.3
-  },
-  {
-    imageSrc: orangeJacketImg,
-    style: { top: 400, left: "30%", height: 300 },
-    transformTrigger: 0.4
-  },
-  {
-    imageSrc: shoeImg,
-    style: { top: 680, left: -50, height: 120 },
-    transformTrigger: 0.5
-  },
-  {
-    imageSrc: arrowImg,
-    style: { top: 680, right: 200, height: 120 },
-    transformTrigger: 0.6
-  },
-  {
-    imageSrc: maskImg,
-    style: { top: 880, left: "30%", height: 120 },
-    transformTrigger: 0.7
-  }
-];
+import {imageList, triggers} from "./FashinScreen.data";
 
 export default function FashionScreen({ scrollContainerHeight }) {
   const scrollRatio = useWindowOnScrollRatio({
@@ -53,21 +11,26 @@ export default function FashionScreen({ scrollContainerHeight }) {
 
   return (
     <div className={"fashion-screen"}>
+        {/*{scrollRatio}*/}
       <div className={"images-container"}>
-        {imageList.map(({ imageSrc, style, transformTrigger }) => {
-          return (
-            <img
-              src={imageSrc}
-              style={{
-                ...style,
-                transform:
-                  scrollRatio >= transformTrigger
-                    ? "translateY(0px)"
-                    : "translateY(100vh)"
-              }}
-            />
-          );
-        })}
+          {Object.keys(imageList).map((columnKey) => {
+              return <div className={`column ${columnKey}`}>
+                  {imageList[columnKey].map(({ imageSrc, style}, index) => {
+                      return (
+                          <img
+                              src={imageSrc}
+                              style={{
+                                  ...style,
+                                  transform:
+                                      scrollRatio >= triggers[index]
+                                          ? "translateY(0px)"
+                                          : "translateY(100vh)"
+                              }}
+                          />
+                      );
+                  })}
+              </div>
+          })}
       </div>
       <div className={"text-container"}>
         {scrollRatio < 0.25 && (

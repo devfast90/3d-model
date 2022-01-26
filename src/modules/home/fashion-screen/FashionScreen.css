@@ -9,11 +9,29 @@
     flex: 1;
     min-height: 100vh;
     position: relative;
+    display: flex;
+}
+
+.fashion-screen .images-container .column{
+    position: relative;
+    flex:1;
+}
+
+.fashion-screen .images-container .column.column1 img{
+    transition: all 0.9s;
+}
+
+.fashion-screen .images-container .column.column2 img{
+    transition: all 1.4s;
+}
+
+.fashion-screen .images-container .column.column3 img{
+    transition: all 1.8s;
 }
 
 .fashion-screen .images-container img{
     position: absolute;
-    transition: all 1s;
+    /*opacity: 0;*/
     transform: translateY(100vh);
 }
 

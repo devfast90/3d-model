@@ -13,13 +13,13 @@ export default function FooterScreen() {
                     COMING EARLY 2022
                 </Header3>
                 <div className={'logo-container'}>
-                    <img src={badInfluenceWhiteLogo}/>
+                    <img src={badInfluenceWhiteLogo} alt={'bad influence'}/>
                 </div>
                 <div className={'footer-container'}>
-                    <img src={oxImage}/>
+                    <img src={oxImage} alt={'o-x'}/>
                     <div>
-                        <img src={footerWhiteLogo}/>
-                        <img src={twitterWhiteLogo}/>
+                        <img src={footerWhiteLogo} alt={'footer-logo'}/>
+                        <img src={twitterWhiteLogo} alt={'twitter-logo'}/>
                     </div>
                     <div>
                         ©VEOPLE 2022
