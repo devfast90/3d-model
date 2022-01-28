@@ -15,8 +15,8 @@ export default function App() {
                 <ActorScreen scrollContainerHeight={"600vh"}/>
                 <SquareScreen/>
                 <CircleScreen/>
-                <FashionScreen scrollContainerHeight={"600vh"}/>
-                <BlackScreen scrollContainerHeight={"600vh"}/>
+                <FashionScreen scrollContainerHeight={'1845px'} contentHeight={'1845px'}/>
+                <BlackScreen scrollContainerHeight={"600vh"} />
                 <PhaseScreen scrollContainerHeight={"200vh"}/>
                 <TeamScreen scrollContainerHeight={"200vh"}/>
                 <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>

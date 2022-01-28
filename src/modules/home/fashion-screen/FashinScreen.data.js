@@ -3,61 +3,89 @@ import shoeImg from "../../../assets/images/fashion-screen/shoes.png";
 import arrowImg from "../../../assets/images/fashion-screen/arrow.png";
 import orangeJacketImg from "../../../assets/images/fashion-screen/orange-jacket.png";
 import maskImg from "../../../assets/images/fashion-screen/mask.png";
+import whiteTShirt from "../../../assets/images/fashion-screen/white-t-shirt.png";
 
 const column1Images = [
     {
         imageSrc: pinkJacketImg,
-        style: {top: -50, left: 0, height: 100},
+        imageId: 1.1,
+        imageStyle: {height: 100, marginBottom: 100},
     },
     {
         imageSrc: arrowImg,
-        style: {top: 300, left: 150, height: 100},
+        imageId: 1.2,
+        imageStyle: {height: 70, marginBottom: 350, left: '20%'}
     },
     {
         imageSrc: shoeImg,
-        style: {top: 680, left: -50, height: 120},
+        imageId: 1.3,
+        imageStyle: {height: 90, left: -20, marginBottom: 500}
+    },
+    {
+        imageSrc: shoeImg,
+        imageId: 1.4,
+        imageStyle: {height: 250,  left: -120, marginBottom: 200},
     },
     {
         imageSrc: pinkJacketImg,
-        style: {top: 780, left: 0, height: 100},
+        imageId: 1.5,
+        imageStyle: {left: 200, height: 170},
     },
 ];
 
 const column2Images = [
     {
         imageSrc: shoeImg,
-        style: {top: 20, left: "50%", height: 120},
+        imageId: 2.1,
+        imageStyle: {height: 100, top: 20, left: '30%', marginBottom: 300},
     },
     {
         imageSrc: orangeJacketImg,
-        style: {top: 400, left: "30%", height: 200},
+        imageId: 2.2,
+        imageStyle: {marginBottom: 200, height: 250, left: -200},
     },
     {
         imageSrc: maskImg,
-        style: {top: 700, left: "30%", height: 60},
+        imageId: 2.3,
+        imageStyle: {height: 60, left: '30%', marginBottom: 100},
+    },
+    {
+        imageSrc: whiteTShirt,
+        imageId: 2.4,
+        imageStyle: {height: 400, left: 30, marginBottom: 100},
     },
     {
         imageSrc: arrowImg,
-        style: {top: 780, left: 0, height: 100},
+        imageId: 2.5,
+        imageStyle: {height: 100, left: '40%'},
     }
 ]
 
 const column3Images = [
     {
         imageSrc: arrowImg,
-        style: {top: 60, left: 150, height: 100},
-    },
-    {
-        imageSrc: arrowImg,
-        style: {top: 350, left: 150, height: 100},
+        imageId: 3.1,
+        imageStyle: {height: 100, left: '20%', marginTop: 300, marginBottom: 100}
     },
     {
         imageSrc: orangeJacketImg,
-        style: {top: 640, left: "30%", height: 120},
+        imageId: 3.2,
+        imageStyle: {marginBottom: 200, height: 200, right: '-40%'},
     },
     {
         imageSrc: shoeImg,
-        style: {top: 720, left: 0, height: 100},
+        imageId: 3.3,
+        imageStyle: {marginBottom: 200, height: 100, right: -50},
+    },
+    {
+        imageSrc: pinkJacketImg,
+        imageId: 3.4,
+        imageStyle: {marginBottom: 200, width: '80%', right: '-30%'},
+    },
+    {
+        imageSrc: maskImg,
+        imageId: 3.5,
+        imageStyle: {marginBottom: 50, height: 80, right: -50},
     }
 ]
 

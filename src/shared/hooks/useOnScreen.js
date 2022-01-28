@@ -1,24 +1,22 @@
 const {useEffect, useState} = require("react");
 
-export default function useOnScreen(ref, {rootMargin = 0} = {}) {
-    // State and setter for storing whether element is visible
+export default function useOnScreen({ref = {}, elementSelector}, {rootMargin = 0,   threshold = 0} = {}) {
     const [isIntersecting, setIntersecting] = useState(false);
+    const [element, setElement] = useState(ref.current);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                // Update our state when observer callback fires
-                setIntersecting(entry.isIntersecting);
-            },
-            {
-                rootMargin: `${rootMargin}px`,
-            }
+            ([entry]) => setIntersecting(entry.isIntersecting),
+            {rootMargin: `${rootMargin}px`, threshold}
         );
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-        return () => {
-            observer.unobserve(ref.current);
-        };
+        setTimeout(()=>{
+            const observeElement = element || document.querySelector(elementSelector);
+            observer.observe(observeElement);
+            setElement(observeElement);
+        }, 200);
+        // return () => {
+        //     observer.unobserve(element);
+        // };
     }, []); // Empty array ensures that effect is only run on mount and unmount
     return isIntersecting;
 }
