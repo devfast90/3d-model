@@ -9,3 +9,8 @@
     align-items: center;
     z-index: 1;
 }
+
+.app-header .right-content img {
+    height: 40px;
+    margin-left: 15px;
+}

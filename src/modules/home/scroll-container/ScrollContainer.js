@@ -19,7 +19,7 @@ export default function ScrollContainer({children}) {
                 contentHeight={contentHeight}
             >
                 {!hideHeaderFooter ? <>
-                        {/*<Header/>*/}
+                        <Header/>
                         <SideText/>
                         <Footer/>
                     </>:null}

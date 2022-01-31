@@ -13,7 +13,7 @@ export default function App() {
         <>
             <ScrollContainer>
                 <ActorScreen scrollContainerHeight={"600vh"}/>
-                <SquareScreen/>
+                <SquareScreen scrollContainerHeight={"600vh"}/>
                 <CircleScreen/>
                 <FashionScreen scrollContainerHeight={'1845px'} contentHeight={'1845px'}/>
                 <BlackScreen scrollContainerHeight={"600vh"} />
