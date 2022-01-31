@@ -1,6 +1,6 @@
 import "./SquareScreen.css";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import {useMemo} from "react";
+import {useEffect, useMemo} from "react";
 
 const MAX_SCROLL_RATIO_FOR_FULL_SCREEN = 0.5
 
@@ -37,6 +37,15 @@ export default function SquareScreen({scrollContainerHeight}) {
         }
     }, [scrollRatio]);
 
+    useEffect(()=>{
+        const $video = document.querySelector('.square-video');
+        if(scrollRatio > MAX_SCROLL_RATIO_FOR_FULL_SCREEN && scrollRatio < 1){
+            $video.play();
+        } else {
+            $video.pause();
+        }
+    }, [scrollRatio]);
+
     return (
         <div className={"square-screen"}>
             <div className={"screen-container"}>
@@ -48,10 +57,12 @@ export default function SquareScreen({scrollContainerHeight}) {
                         }}
                     >
                         <video
-                            src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
-                            autoPlay={scrollRatio > MAX_SCROLL_RATIO_FOR_FULL_SCREEN}
+                            className={'square-video'}
+                            src={'videos/app-video.mp4'}
                             loop
+                            autoPlay
                             playsInline
+                            muted
                         ></video>
                     </div>
                 </div>
