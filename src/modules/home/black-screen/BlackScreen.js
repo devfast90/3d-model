@@ -12,7 +12,7 @@ export default function BlackScreen({ scrollContainerHeight, setFontColor }) {
   });
 
   useEffect(()=>{
-    if(scrollRatio >= 0){
+    if(scrollRatio > 0){
       setFontColor(FONT_COLORS.WHITE);
     } else {
       setFontColor(FONT_COLORS.BLACK);
