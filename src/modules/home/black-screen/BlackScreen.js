@@ -1,12 +1,23 @@
 import "./BlackScreen.css";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
+import quoteIcon3 from '../../../assets/images/quote-icon-3.svg';
+import {useEffect} from "react";
+import {FONT_COLORS} from "../scroll-container/ScrollContainer";
 
-export default function BlackScreen({ scrollContainerHeight }) {
+export default function BlackScreen({ scrollContainerHeight, setFontColor }) {
   const scrollRatio = useWindowOnScrollRatio({
     scrollContainerHeight,
     offsetSelector: ".black-screen"
   });
+
+  useEffect(()=>{
+    if(scrollRatio >= 0){
+      setFontColor(FONT_COLORS.WHITE);
+    } else {
+      setFontColor(FONT_COLORS.BLACK);
+    }
+  }, [scrollRatio]);
 
   return (
     <div
@@ -32,6 +43,7 @@ export default function BlackScreen({ scrollContainerHeight }) {
         </div>
       </div>
       <div className={"text-container"}>
+        <img src={quoteIcon3} alt={'quote-icon'}/>
         {scrollRatio < 0.25 && (
           <Header1 className={`text-open-animation`}>
             They might be a bit broken inside, but outside they’re perfection.

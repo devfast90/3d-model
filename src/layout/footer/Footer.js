@@ -1,10 +1,15 @@
 import "./Footer.css";
 import oxLogo from "../../assets/images/header-ox-logo.svg";
+import oxWhiteLogo from "../../assets/images/header-ox-logo-white.svg";
+import {FONT_COLORS} from "../../modules/home/scroll-container/ScrollContainer";
 
-export default function Footer() {
+export default function Footer({fontColor}) {
   return (
     <div className={"app-footer"}>
-        <img src={oxLogo} alt={"o-x-logo"} />
+        {fontColor === FONT_COLORS.WHITE ?
+            <img src={oxWhiteLogo} alt={"o-x-logo"} /> :
+            <img src={oxLogo} alt={"o-x-logo"} />
+        }
     </div>
   );
 }

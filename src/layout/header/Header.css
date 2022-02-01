@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    transition: all 2s;
 }
 
 .app-header .right-content img {
