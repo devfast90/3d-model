@@ -1,9 +1,8 @@
 .fashion-screen{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     flex: 1;
-    /*height: 1915px;*/
 }
 .fashion-screen .images-container{
     width: 100vw;
@@ -15,7 +14,6 @@
 .fashion-screen .images-container .column{
     position: relative;
     width: 33.33%;
-    /*flex:1;*/
 }
 
 /*.fashion-screen .images-container .column.column1 .image-container{*/
@@ -30,7 +28,7 @@
 
 
 .fashion-screen .images-container .column.column1 img{
-    transition: all 0.5s;
+    transition: all 0.4s;
 }
 
 .fashion-screen .images-container .column.column2 img{
@@ -46,9 +44,29 @@
     z-index: 1;
 }
 
-.fashion-screen .text-container .header1{
+.fashion-screen .text-container{
     position: absolute;
-    width: 400px;
-    top: 90px;
-    left: 50%;
+    width: 100vw;
+    top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 125px;
+    padding-right: 25%;
+}
+
+.fashion-screen .text-container .text-content{
+    position: sticky;
+    width: 450px;
+    top: 0px;
+    background: var(--white-background);
+    z-index: 100;
+}
+
+.fashion-screen .text-container .text-content .header1{
+    margin-bottom: 0px;
+}
+
+.fashion-screen .text-container img{
+
 }

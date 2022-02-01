@@ -7,6 +7,7 @@
 
 .App{
   --header-height: 100px;
+  --white-background: #F7F6F2;
 }
 
 .App-logo {

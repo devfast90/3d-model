@@ -35,21 +35,25 @@ export default function useWindowOnScrollRatio({scrollContainerHeight, offsetSel
         if(isOnScreen) {
             let containerHeight;
             if (scrollContainerHeight) {
-                //As the heights are provided in vh mode, this is required to convert to pixel height using the following formula
-                containerHeight = ((windowHeight * parseInt(scrollContainerHeight)) / 100) - windowHeight;
+                if(scrollContainerHeight.indexOf('vh') > -1){
+                    containerHeight = ((windowHeight * parseInt(scrollContainerHeight)) / 100) - windowHeight
+                } else {
+                    containerHeight = parseInt(scrollContainerHeight);
+                }
             } else {
-                containerHeight = document.querySelector(offsetSelector)?.height;
+                containerHeight = document.querySelector(offsetSelector)?.offsetHeight;
             }
 
-            // if(offsetSelector === '.fashion-img-1-1'){
-            //     console.log(isOnScreen);
-            //     console.log('\n\noffsetValue=> ', offsetValue);
-            //     console.log('scrollY=> ', scrollY);
-            //     console.log('scrollY - offsetValue => ', scrollY - offsetValue);
-            //     console.log('Window Height => ', windowHeight);
-            //     console.log('container Height => ', containerHeight);
-            //     console.log('Ratio => ', (scrollY - offsetValue) / containerHeight);
-            // }
+            if(offsetSelector === '.fashion-screen'){
+                console.log('\n\n\n\nisOnScreen ==> ', isOnScreen);
+                console.log('scrollContainerHeight=> ', scrollContainerHeight);
+                console.log('offsetValue=> ', offsetValue);
+                console.log('scrollY=> ', scrollY);
+                console.log('scrollY - offsetValue => ', scrollY - offsetValue);
+                console.log('Window Height => ', windowHeight);
+                console.log('container Height => ', containerHeight);
+                console.log('Ratio => ', (scrollY - offsetValue) / containerHeight);
+            }
             let scrollRatio = (scrollY - offsetValue) / containerHeight;
             if (scrollRatio < 0) {
                 scrollRatio = (scrollY - offsetValue) / windowHeight;

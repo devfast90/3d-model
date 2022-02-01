@@ -14,7 +14,7 @@ const column1Images = [
     {
         imageSrc: arrowImg,
         imageId: 1.2,
-        imageStyle: {height: 70, marginBottom: 350, left: '20%'}
+        imageStyle: {height: 140, marginBottom: 350, left: '20%'}
     },
     {
         imageSrc: shoeImg,
@@ -47,7 +47,7 @@ const column2Images = [
     {
         imageSrc: maskImg,
         imageId: 2.3,
-        imageStyle: {height: 60, left: '30%', marginBottom: 100},
+        imageStyle: {height: 100, left: '30%', marginBottom: 100},
     },
     {
         imageSrc: whiteTShirt,
@@ -57,7 +57,7 @@ const column2Images = [
     {
         imageSrc: arrowImg,
         imageId: 2.5,
-        imageStyle: {height: 100, left: '40%'},
+        imageStyle: {height: 150, left: '40%'},
     }
 ]
 
@@ -65,7 +65,7 @@ const column3Images = [
     {
         imageSrc: arrowImg,
         imageId: 3.1,
-        imageStyle: {height: 100, left: '20%', marginTop: 300, marginBottom: 100}
+        imageStyle: {height: 200, left: '30%', marginTop: 300, marginBottom: 100}
     },
     {
         imageSrc: orangeJacketImg,
@@ -75,7 +75,7 @@ const column3Images = [
     {
         imageSrc: shoeImg,
         imageId: 3.3,
-        imageStyle: {marginBottom: 200, height: 100, right: -50},
+        imageStyle: {marginBottom: 200, height: 150, right: -50},
     },
     {
         imageSrc: pinkJacketImg,
