@@ -1,8 +1,6 @@
 import "./CircleScreen.css";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import circleImg from "../../../assets/images/circle-screen/circle.png";
 import circleActor from "../../../assets/images/circle-screen/cicle-actor.png";
-import Header2 from "../../../shared/components/header2/Header2";
 import Header1 from "../../../shared/components/header1/Header1";
 import Header3 from "../../../shared/components/header3/Header3";
 import {useMemo} from "react";
@@ -25,7 +23,6 @@ export default function CircleScreen({scrollContainerHeight}) {
                     muted
                 ></video>
             </div>
-            scrollRatio - {scrollRatio}
             {<CircleFirstPart scrollRatio={Math.min(scrollRatio * 2, 1)}/>}
             {<CircleSecondPart scrollRatio={Math.min((scrollRatio - 0.5) * 2, 1)}/>}
         </div>
@@ -34,6 +31,10 @@ export default function CircleScreen({scrollContainerHeight}) {
 
 function CircleFirstPart({scrollRatio}) {
     const blackText = {color: "black", opacity: 1};
+    const localScrollRatio = useWindowOnScrollRatio({
+        scrollContainerSelector:'.text-container',
+        offsetSelector: '.text-container'
+    });
     const textContents = useMemo(() => {
         const textContents = [
             'The iconic world of JOR ROSS, visionary artist of music, streetwear and pop culture.',
@@ -44,24 +45,26 @@ function CircleFirstPart({scrollRatio}) {
         ];
 
         return textContents.map((content, index) => {
-            const initialRatio = 2;
-            const minRatio = index * (initialRatio / textContents.length);
-            const maxRatio = Math.min((index + 1) * (initialRatio / textContents.length), 1);
+            const initialRatio = 1;
+            const totalParts = textContents.length;
+            const minRatio = index * (initialRatio / totalParts);
+            const maxRatio = Math.min((index + 1) * (initialRatio / totalParts), initialRatio);
             return {content, minRatio, maxRatio};
         })
     }, []);
 
-    if(scrollRatio ===1){
-        return null;
-    }
-
     return (
-        <div className={"text-content"} style={{top: `${2040*(1-scrollRatio)}px` }}>
-            {textContents.map(({content, maxRatio, minRatio}) => {
-                return <span style={scrollRatio > minRatio && scrollRatio < maxRatio ? blackText : {}}>
-                    {content}
-                </span>
-            })}
+        <div className={"text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden'}}>
+            <div className={"text-content"}>
+                {textContents.map(({content, maxRatio, minRatio}, index) => {
+                    return <span style={
+                            localScrollRatio > minRatio && localScrollRatio < maxRatio ? blackText : {}
+                    }
+                                 key={index}>
+                         {content}
+                    </span>
+                })}
+            </div>
         </div>
     );
 }

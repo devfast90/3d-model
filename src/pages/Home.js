@@ -14,14 +14,14 @@ export default function App() {
     return (
         <>
             <ScrollContainer>
-                {/*<ActorScreen scrollContainerHeight={"600vh"}/>*/}
+                <ActorScreen scrollContainerHeight={"600vh"}/>
                 <SquareScreen scrollContainerHeight={"400vh"}/>
                 <CircleScreen/>
                 <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
-                {/*<BlackScreen scrollContainerHeight={"600vh"} />*/}
-                {/*<PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>*/}
-                {/*<TeamScreen scrollContainerHeight={"600vh"}/>*/}
-                {/*<FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>*/}
+                <BlackScreen scrollContainerHeight={"600vh"} />
+                <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>
+                <TeamScreen scrollContainerHeight={"600vh"}/>
+                <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
             </ScrollContainer>
         </>
     );

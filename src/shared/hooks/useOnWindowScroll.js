@@ -5,13 +5,10 @@ const getScroll = (event) => ({
     scrollY: (event && event.target && event.target.scrollTop) || 0,
 });
 
-/**
- * Hook that monitors window scroll, and updates the object
- * at the end of each window scroll. It returns the current
- * offset X and Y position.
- * @param {If true, fires the event only when the user stops scrolling.} onlyOnScrollEnd
- */
-export default function useOnWindowScroll(onlyOnScrollEnd) {
+export default function useOnWindowScroll({
+                                              onlyOnScrollEnd,
+                                              scrollContainerSelector='.scroll-container'
+}) {
     const [windowScroll, setWindowScroll] = useState(getScroll());
 
     useEffect(() => {
@@ -26,7 +23,8 @@ export default function useOnWindowScroll(onlyOnScrollEnd) {
             }
         };
 
-        const $scrollContainer = document.querySelector('.scroll-container');
+        const $scrollContainer = document.querySelector(scrollContainerSelector);
+        console.log('scrollContainerSelector ==>', scrollContainerSelector);
         setTimeout(()=> $scrollContainer.addEventListener("scroll", handleScroll), 400);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
