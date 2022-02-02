@@ -52,7 +52,7 @@ export default function PhaseScreen({scrollContainerHeight, setFontColor}) {
             className={"phase-screen"}
             style={{
                 background: scrollRatio >= 0 ? "white" : "black",
-                overflowY:scrollRatio >= 0.33 && scrollRatio <= 0.66 ? "scroll" : "hidden"
+                // overflowY:scrollRatio >= 0.33 && scrollRatio <= 0.66 ? "scroll" : "hidden"
             }}
         >
             <div className={'middle-line'} style={{height: scrollRatio >= 0 ? '100%' : 0}}/>

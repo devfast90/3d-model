@@ -51,13 +51,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    padding-top: 125px;
     padding-right: 25%;
 }
 
 .fashion-screen .text-container .text-content{
     position: sticky;
     width: 450px;
+    padding-top: 125px;
     top: 0px;
     background: var(--white-background);
     z-index: 100;

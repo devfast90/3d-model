@@ -10,18 +10,18 @@ import FooterScreen from "../modules/home/footer-screen/FooterScreen";
 
 export default function App() {
     const fashionScreenHeight = '1915px';
-    const phaseScreenHeight = '2076px';
+    const phaseScreenHeight = '1640px';
     return (
         <>
             <ScrollContainer>
                 {/*<ActorScreen scrollContainerHeight={"600vh"}/>*/}
-                {/*<SquareScreen scrollContainerHeight={"200vh"}/>*/}
-                {/*<CircleScreen/>*/}
-                {/*<FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>*/}
-                <BlackScreen scrollContainerHeight={"600vh"} />
-                <PhaseScreen scrollContainerHeight={phaseScreenHeight}/>
-                <TeamScreen scrollContainerHeight={"600vh"}/>
-                <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
+                <SquareScreen scrollContainerHeight={"400vh"}/>
+                <CircleScreen/>
+                <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
+                {/*<BlackScreen scrollContainerHeight={"600vh"} />*/}
+                {/*<PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>*/}
+                {/*<TeamScreen scrollContainerHeight={"600vh"}/>*/}
+                {/*<FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>*/}
             </ScrollContainer>
         </>
     );
