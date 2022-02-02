@@ -24,7 +24,6 @@ export default function useOnWindowScroll({
         };
 
         const $scrollContainer = document.querySelector(scrollContainerSelector);
-        console.log('scrollContainerSelector ==>', scrollContainerSelector);
         setTimeout(()=> $scrollContainer.addEventListener("scroll", handleScroll), 400);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);

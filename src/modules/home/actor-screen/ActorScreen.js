@@ -43,7 +43,7 @@ export default function ActorScreen({ scrollContainerHeight }) {
           <div className={`mash ${mashToTop ? 'to-top': ''}`}/>
           <div
             className={"actor"}
-            style={{ height: `${(scrollRatio - 0.1) * 2 * 100}%` }}
+            style={{ height: `${(scrollRatio) * 100}%` }}
           />
         </div>
       </div>

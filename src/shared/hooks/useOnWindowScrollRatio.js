@@ -49,16 +49,16 @@ export default function useWindowOnScrollRatio({scrollContainerHeight, offsetSel
                 containerHeight = document.querySelector(offsetSelector)?.scrollHeight;
             }
 
-            // if(offsetSelector === '.fashion-img-3-1'){
-            //     console.log('\n\n\n\nisOnScreen ==> ', isOnScreen);
-            //     console.log('scrollContainerHeight=> ', scrollContainerHeight);
-            //     console.log('offsetValue=> ', offsetValue);
-            //     console.log('scrollY=> ', scrollY);
-            //     console.log('scrollY - offsetValue => ', scrollY - offsetValue);
-            //     console.log('Window Height => ', windowHeight);
-            //     console.log('container Height => ', containerHeight);
-            //     console.log('Ratio => ', (scrollY - offsetValue) / containerHeight);
-            // }
+            if(offsetSelector === '.text-container'){
+                console.log('\n\n\n\nisOnScreen ==> ', isOnScreen);
+                console.log('scrollContainerHeight=> ', scrollContainerHeight);
+                console.log('offsetValue=> ', offsetValue);
+                console.log('scrollY=> ', scrollY);
+                console.log('scrollY - offsetValue => ', scrollY - offsetValue);
+                console.log('Window Height => ', windowHeight);
+                console.log('container Height => ', containerHeight);
+                console.log('Ratio => ', (scrollY - offsetValue) / containerHeight);
+            }
             let scrollRatio = (scrollY - offsetValue) / containerHeight;
             if (scrollRatio < 0) {
                 scrollRatio = (scrollY - offsetValue) / windowHeight;

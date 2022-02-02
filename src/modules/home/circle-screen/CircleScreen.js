@@ -32,8 +32,8 @@ export default function CircleScreen({scrollContainerHeight}) {
 function CircleFirstPart({scrollRatio}) {
     const blackText = {color: "black", opacity: 1};
     const localScrollRatio = useWindowOnScrollRatio({
-        scrollContainerSelector:'.text-container',
-        offsetSelector: '.text-container'
+        scrollContainerSelector:'.circle-text-container',
+        offsetSelector: '.circle-text-container'
     });
     const textContents = useMemo(() => {
         const textContents = [
@@ -53,10 +53,12 @@ function CircleFirstPart({scrollRatio}) {
         })
     }, []);
 
+    // console.log('\n\n');
     return (
-        <div className={"text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden'}}>
+        <div className={"circle-text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden'}}>
             <div className={"text-content"}>
                 {textContents.map(({content, maxRatio, minRatio}, index) => {
+                    // console.log(`localScrollRatio -> ${localScrollRatio}, Min Ratio -> ${minRatio}, Max Ratio -> ${maxRatio}`);
                     return <span style={
                             localScrollRatio > minRatio && localScrollRatio < maxRatio ? blackText : {}
                     }

@@ -14,7 +14,7 @@
 .phase-screen .middle-line{
     height: 0px;
     width: 4px;
-    transition: all 2s;
+    transition: all 3s;
     position: absolute;
     left: calc(50% - 2px);
     top: 0;

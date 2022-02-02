@@ -14,11 +14,11 @@ const phaseData = [
             subHeader: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
         },
         right: {content: <><img src={phase1_1Img}/><img src={phase1_2Img} className={'floating-img'}/></>},
-        displayTrigger: 0
+        displayTrigger: -0.8
     },
     {right: {header: 'Phase 2', subHeader: 'Coming soon'}, displayTrigger: 0.10},
-    {left: {header: 'Phase 3', subHeader: 'Coming soon'}, displayTrigger: 0.15},
-    {right: {header: 'Phase 4', subHeader: 'Coming soon'}, displayTrigger: 0.20}
+    {left: {header: 'Phase 3', subHeader: 'Coming soon'}, displayTrigger: 0.20},
+    {right: {header: 'Phase 4', subHeader: 'Coming soon'}, displayTrigger: 0.30}
 ]
 
 export default function PhaseScreen({scrollContainerHeight, setFontColor}) {
@@ -26,8 +26,6 @@ export default function PhaseScreen({scrollContainerHeight, setFontColor}) {
         scrollContainerHeight,
         offsetSelector: ".phase-screen"
     });
-
-    console.log(scrollRatio);
 
     useEffect(()=>{
         if(scrollRatio > 0 ){
@@ -51,13 +49,15 @@ export default function PhaseScreen({scrollContainerHeight, setFontColor}) {
         <div
             className={"phase-screen"}
             style={{
-                background: scrollRatio >= 0 ? "white" : "black",
+                // background: scrollRatio >= 0 ? "white" : "black",
                 // overflowY:scrollRatio >= 0.33 && scrollRatio <= 0.66 ? "scroll" : "hidden"
             }}
         >
-            <div className={'middle-line'} style={{height: scrollRatio >= 0 ? '100%' : 0}}/>
+            <div className={'middle-line'} style={{height: scrollRatio >= -0.2 ? '100%' : 0}}/>
             {phaseData.map(({left, right, displayTrigger}, index) => {
-                return <div className={`phase phase-${index + 1}`} style={{opacity: scrollRatio > displayTrigger ? 1 :0 }}>
+                return <div className={`phase phase-${index + 1}`}
+                            key={index}
+                            style={{opacity: scrollRatio > displayTrigger ? 1 :0 }}>
                     <div className={'left-container'}>
                         {renderContent(left, displayTrigger)}
                     </div>
