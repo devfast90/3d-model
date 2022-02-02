@@ -25,11 +25,11 @@ export default function ScrollContainer({children}) {
                 key={contentType}
                 contentHeight={contentHeight}
             >
-                {/*{!hideHeaderFooter ? <>*/}
-                {/*        <Header fontColor={fontColor} index={index}/>*/}
-                {/*        <SideText fontColor={fontColor} index={index}/>*/}
-                {/*        <Footer fontColor={fontColor} index={index}/>*/}
-                {/*    </>:null}*/}
+                {!hideHeaderFooter ? <>
+                        <Header fontColor={fontColor} index={index}/>
+                        <SideText fontColor={fontColor} index={index}/>
+                        <Footer fontColor={fontColor} index={index}/>
+                    </>:null}
                 {React.cloneElement(child, {...props, scrollContainerHeight, setFontColor})}
             </StickyView>
         })}

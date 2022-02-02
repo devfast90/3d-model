@@ -63,7 +63,7 @@ function CircleFirstPart({scrollRatio}) {
                             localScrollRatio > minRatio && localScrollRatio < maxRatio ? blackText : {}
                     }
                                  key={index}>
-                         {content}
+                         {content}{' '}
                     </span>
                 })}
             </div>

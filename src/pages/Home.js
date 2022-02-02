@@ -9,7 +9,7 @@ import TeamScreen from "../modules/home/team-screen/TeamScreen";
 import FooterScreen from "../modules/home/footer-screen/FooterScreen";
 
 export default function App() {
-    const fashionScreenHeight = '1915px';
+    const fashionScreenHeight = '2225px';
     const phaseScreenHeight = '1640px';
     return (
         <>

@@ -1,30 +1,32 @@
 import pinkJacketImg from "../../../assets/images/fashion-screen/pink-jacket.png";
 import shoeImg from "../../../assets/images/fashion-screen/shoes.png";
-import arrowImg from "../../../assets/images/fashion-screen/arrow.png";
-import orangeJacketImg from "../../../assets/images/fashion-screen/orange-jacket.png";
+import snickersImg from "../../../assets/images/fashion-screen/snickers.png";
+import nopeShirtImg from "../../../assets/images/fashion-screen/nope-shirt.png";
 import maskImg from "../../../assets/images/fashion-screen/mask.png";
 import whiteTShirt from "../../../assets/images/fashion-screen/white-t-shirt.png";
+import hoodieImg from "../../../assets/images/fashion-screen/hoodie.png";
+import ladyDressImg from "../../../assets/images/fashion-screen/lady-dress.png";
 
 const column1Images = [
     {
         imageSrc: pinkJacketImg,
         imageId: 1.1,
-        imageStyle: {height: 100, marginBottom: 100},
+        imageStyle: {height: 200, marginBottom: 200},
     },
     {
-        imageSrc: arrowImg,
+        imageSrc: snickersImg,
         imageId: 1.2,
-        imageStyle: {height: 140, marginBottom: 350, left: '20%'}
+        imageStyle: {height: 160, marginBottom: 350, left: '20%'}
     },
     {
-        imageSrc: shoeImg,
+        imageSrc: hoodieImg,
         imageId: 1.3,
-        imageStyle: {height: 90, left: -20, marginBottom: 500}
+        imageStyle: {height: 340, left: -20, marginBottom: 400}
     },
     {
         imageSrc: shoeImg,
         imageId: 1.4,
-        imageStyle: {height: 250,  left: -120, marginBottom: 200},
+        imageStyle: {height: 190,  left: -120, marginBottom: 200},
     },
     {
         imageSrc: pinkJacketImg,
@@ -37,17 +39,17 @@ const column2Images = [
     {
         imageSrc: shoeImg,
         imageId: 2.1,
-        imageStyle: {height: 100, top: 20, left: '30%', marginBottom: 300},
+        imageStyle: {height: 140, top: 20, left: '30%', marginBottom: 300},
     },
     {
-        imageSrc: orangeJacketImg,
+        imageSrc: nopeShirtImg,
         imageId: 2.2,
-        imageStyle: {marginBottom: 200, height: 250, left: -200},
+        imageStyle: {marginBottom: 200, height: 250, left: 0},
     },
     {
         imageSrc: maskImg,
         imageId: 2.3,
-        imageStyle: {height: 100, left: '30%', marginBottom: 100},
+        imageStyle: {height: 200, left: '30%', marginBottom: 300},
     },
     {
         imageSrc: whiteTShirt,
@@ -55,37 +57,37 @@ const column2Images = [
         imageStyle: {height: 400, left: 30, marginBottom: 100},
     },
     {
-        imageSrc: arrowImg,
+        imageSrc: snickersImg,
         imageId: 2.5,
-        imageStyle: {height: 150, left: '40%'},
+        imageStyle: {height: 150, left: -140},
     }
 ]
 
 const column3Images = [
     {
-        imageSrc: arrowImg,
+        imageSrc: snickersImg,
         imageId: 3.1,
-        imageStyle: {height: 200, left: '30%', marginTop: 300, marginBottom: 100}
+        imageStyle: {height: 100, left: 200, marginTop: 200, marginBottom: 300}
     },
     {
-        imageSrc: orangeJacketImg,
+        imageSrc: ladyDressImg,
         imageId: 3.2,
-        imageStyle: {marginBottom: 200, height: 200, right: '-40%'},
+        imageStyle: {marginBottom: 200, height: 400, left: 30},
     },
     {
         imageSrc: shoeImg,
         imageId: 3.3,
-        imageStyle: {marginBottom: 200, height: 150, right: -50},
+        imageStyle: {marginBottom: 200, height: 150, right: -200},
     },
     {
         imageSrc: pinkJacketImg,
         imageId: 3.4,
-        imageStyle: {marginBottom: 200, width: '80%', right: '-30%'},
+        imageStyle: {marginBottom: 200, height: 200, right: 0},
     },
     {
         imageSrc: maskImg,
         imageId: 3.5,
-        imageStyle: {marginBottom: 50, height: 80, right: -50},
+        imageStyle: {marginBottom: 100, height: 160, left: 200},
     }
 ]
 
