@@ -1,3 +1,4 @@
+@import '../../../assets/scss/_mixin';
 .actor-screen{
     display: flex;
     width: 100%;
@@ -6,6 +7,12 @@
         position: relative;
         padding-left: 80px;
         padding-top: calc(var(--header-height)*2);
+
+        @include breakpoint(medium-and-lower) {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
     }
     .text-content1{
         animation-delay: 0.6s;
@@ -14,6 +21,9 @@
     .image-modal{
         flex: 1;
         position: relative;
+        @include breakpoint(medium-and-lower) {
+            display: none;
+        }
     }
 
     .image-modal .actor,
@@ -46,5 +56,8 @@
         margin-top: 0px;
         margin-bottom: 0px;
         width: 700px;
+        @include breakpoint(medium-and-lower) {
+            width: 70vw;
+        }
     }
 }

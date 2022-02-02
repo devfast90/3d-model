@@ -19,25 +19,27 @@ export default function ActorScreen({ scrollContainerHeight }) {
     <>
       <div className={"actor-screen"}>
         <div className={"text-container"}>
-          <img src={quoteIcon} alt={'quote-icon'}/>
-          {scrollRatio < 0.33 && (
-            <Header1 className={`text-content1 text-open-animation`}>
-              Be weird,<br/> dumb, sexy, broken, whatever. <br/> Just not f&$!#g boring.
-            </Header1>
-          )}
-          {scrollRatio > 0.33 && scrollRatio < 0.66 && (
-            <Header1 className={"text-content2 text-open-animation"}>
-              10,000 wayward misfits are rigged <br />
-              and ready to leave web 2.0 behind <br />
-              and take over Metaverse
-            </Header1>
-          )}
-          {scrollRatio > 0.66 && (
-            <Header1 className={"text-content3 text-open-animation"}>
-              The Bad Influence takeover begins <br/>
-              Early 2022
-            </Header1>
-          )}
+          <div className={'text-content'}>
+            <img src={quoteIcon} alt={'quote-icon'}/>
+            {scrollRatio < 0.33 && (
+              <Header1 className={`text-content1 text-open-animation`}>
+                Be weird,<br/> dumb, sexy, broken, whatever. <br/> Just not f&$!#g boring.
+              </Header1>
+            )}
+            {scrollRatio > 0.33 && scrollRatio < 0.66 && (
+              <Header1 className={"text-content2 text-open-animation"}>
+                10,000 wayward misfits are rigged <br />
+                and ready to leave web 2.0 behind <br />
+                and take over Metaverse
+              </Header1>
+            )}
+            {scrollRatio > 0.66 && (
+              <Header1 className={"text-content3 text-open-animation"}>
+                The Bad Influence takeover begins <br/>
+                Early 2022
+              </Header1>
+            )}
+          </div>
         </div>
         <div className={"image-modal"}>
           <div className={`mash ${mashToTop ? 'to-top': ''}`}/>
