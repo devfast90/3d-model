@@ -1,5 +1,5 @@
 import Header1 from "../../../shared/components/header1/Header1";
-import "./ActorScreen.css";
+import "./ActorScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import quoteIcon from "../../../assets/images/quote-icon.svg";
 import {useEffect, useState} from "react";

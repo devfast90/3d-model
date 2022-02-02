@@ -1,6 +1,6 @@
 import appBlackLogo from "../../assets/images/app-black-logo.svg";
 import appWhiteLogo from "../../assets/images/app-white-logo.svg";
-import "./Header.css";
+import "./Header.scss";
 import discordLogo from "../../assets/images/discord-logo.svg";
 import twitterLogo from "../../assets/images/twitter-logo.svg";
 import twitterWhiteLogo from "../../assets/images/twitter-logo-white.svg";

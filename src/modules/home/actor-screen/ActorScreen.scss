@@ -1,0 +1,50 @@
+.actor-screen{
+    display: flex;
+    width: 100%;
+    .text-container{
+        flex: 1;
+        position: relative;
+        padding-left: 80px;
+        padding-top: calc(var(--header-height)*2);
+    }
+    .text-content1{
+        animation-delay: 0.6s;
+    }
+
+    .image-modal{
+        flex: 1;
+        position: relative;
+    }
+
+    .image-modal .actor,
+    .image-modal .mash{
+        height: 0px;
+        background-size: auto calc(100vh - var(--header-height));
+        background-position: center var(--header-height);
+        background-repeat: no-repeat;
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+
+    .image-modal .actor{
+        background-image: url('../../../../public/images/actor-screen/actor.png');
+        top:0;
+    }
+
+    .image-modal .mash{
+        background-image: url('../../../../public/images/actor-screen/mesh.png');
+        transition: all 700ms;
+    }
+
+    .image-modal .mash.to-top{
+        height: 100%;
+    }
+
+    .header1{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 700px;
+    }
+}

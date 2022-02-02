@@ -1,4 +1,4 @@
-import "./Footer.css";
+import "./Footer.scss";
 import oxLogo from "../../assets/images/header-ox-logo.svg";
 import oxWhiteLogo from "../../assets/images/header-ox-logo-white.svg";
 import {FONT_COLORS} from "../../modules/home/scroll-container/ScrollContainer";
