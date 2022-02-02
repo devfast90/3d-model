@@ -1,12 +1,12 @@
 .side-text{
     --font-size: 15px;
-    transition: all 2s;
+    transition: color 2s;
     font-family: Helvetica Neue;
     font-size: var(--font-size);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 3;
 
     transform: rotate(90deg);
     position: fixed;

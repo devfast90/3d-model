@@ -10,6 +10,13 @@
     padding-top: var(--header-height);
 }
 
+.team-screen .title{
+    width: 100%;
+    text-align: center;
+    background: white;
+    z-index: 2;
+}
+
 .team-screen .title h1{
     margin: 0px;
     margin-bottom: 100px;
@@ -29,12 +36,14 @@
     opacity: 0;
     transform: translateY(500px);
     transition: all 1.2s;
+    position: absolute;
+    top: 400px;
 }
 
 .team-screen .team-list .team-member{
-    width: 160px;
-    margin-bottom: 40px;
-    margin-right: 40px;
+    width: 180px;
+    margin-bottom: 60px;
+    margin-right: 60px;
 }
 
 .team-screen .team-list .team-member:last-of-type{

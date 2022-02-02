@@ -12,7 +12,7 @@ export default function BlackScreen({ scrollContainerHeight, setFontColor }) {
   });
 
   useEffect(()=>{
-    if(scrollRatio > 0){
+    if(scrollRatio > 0 ){
       setFontColor(FONT_COLORS.WHITE);
     } else {
       setFontColor(FONT_COLORS.BLACK);
@@ -27,11 +27,11 @@ export default function BlackScreen({ scrollContainerHeight, setFontColor }) {
       <div
         className={"mash"}
         style={{
-          transform: `rotateY(${Math.min(scrollRatio * 2, 1) * 90}deg)`
+          transform: `rotateY(${Math.min(scrollRatio, 1) * 75}deg)`
         }}
       />
       <div className={"actor-image"} />
-      <div className={"actor-video"}>
+      <div className={"actor-video"} style={{opacity: scrollRatio > 0.1? 1: 0}}>
         <div className="video-container">
           <video
             src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"

@@ -13,9 +13,10 @@ const teamListTemp = [
     {title: 'Team Member', title2: '/// Job Role', description: 'Lorem ipsum  sit amet, consectetur or sit amet, consectetur', imgSrc: teamUser2},
     {title: 'Team Member', title2: '/// Job Role', description: 'Lorem ipsum  sit amet, consectetur or sit amet, consectetur', imgSrc: teamUser1},
     {title: 'Team Member', title2: '/// Job Role', description: 'Lorem ipsum  sit amet, consectetur or sit amet, consectetur', imgSrc: teamUser2},
+    {title: 'Team Member', title2: '/// Job Role', description: 'Lorem ipsum  sit amet, consectetur or sit amet, consectetur', imgSrc: teamUser2},
 ];
 
-const teamList = [...teamListTemp, ...teamListTemp, ...teamListTemp];
+const teamList = [...teamListTemp, ...teamListTemp, ...teamListTemp, ...teamListTemp];
 
 export default function TeamScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({
@@ -26,10 +27,12 @@ export default function TeamScreen({scrollContainerHeight}) {
     const {windowWidth} = useWindowDimension();
 
     const {membersInRow, rows, leftPadding, rowDisplayTrigger} = useMemo(()=>{
-        const unitWidth = 160 + 40;
-        const membersInRow = Math.floor((windowWidth - 20) / unitWidth);
+        const gutter = 60;
+        const memberWidth = 180;
+        const unitWidth = memberWidth + gutter;
+        const membersInRow = Math.min(Math.floor((windowWidth - (gutter/2)) / unitWidth), 5);
         const rows = Array.from(Array(Math.max(Math.ceil(teamList.length / membersInRow), 1)));
-        const leftPadding = (windowWidth - ((Math.min(membersInRow, teamList.length) * unitWidth) - 40));
+        const leftPadding = (windowWidth - ((Math.min(membersInRow, teamList.length) * unitWidth) - gutter));
         const rowDisplayTrigger = 1 / (rows.length+1);
         return {unitWidth, membersInRow, rows, leftPadding, rowDisplayTrigger};
     }, [windowWidth]);
@@ -37,12 +40,14 @@ export default function TeamScreen({scrollContainerHeight}) {
     const renderTeamList = ()=>{
         return <div className={'team-list'}>
             {rows.map((row, index)=>{
+                let rowStyle = {opacity: 0, transform: 'translateY(280px)'};
+                if(scrollRatio >= rowDisplayTrigger*(index +2)){
+                    rowStyle = {opacity: 0, transform: 'translateY(-280px)'};
+                } else if(scrollRatio >= rowDisplayTrigger*(index +1) || (index===0 && scrollRatio >=0)){
+                    rowStyle = {opacity: 1, transform: 'translateY(0px)'};
+                }
                 return <div className={'team-row '} key={index}
-                            style={{
-                                paddingLeft: leftPadding,
-                                opacity:(scrollRatio >= rowDisplayTrigger*(index +1)) ? 1 : 0,
-                                transform:(scrollRatio >= rowDisplayTrigger*(index+1)) ? 'translateY(0px)' : 'translateY(500px)'
-                            }}>
+                            style={{paddingLeft: leftPadding, ...rowStyle}}>
                     {teamList.slice(index*membersInRow, (index*membersInRow + membersInRow ) )
                         .map(({title, title2, description, imgSrc}, innerIndex) => {
                             return <div className={'team-member'} key={innerIndex}>

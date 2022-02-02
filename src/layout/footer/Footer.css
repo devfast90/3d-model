@@ -7,5 +7,8 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+}
+
+.app-footer img{
     transition: all 2s;
 }

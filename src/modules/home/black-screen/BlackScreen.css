@@ -47,6 +47,7 @@
     position: absolute;
     right:20%;
     bottom:10%;
+    transition: all 2s;
 }
 
 .black-screen .actor-video video{
