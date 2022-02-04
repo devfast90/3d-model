@@ -44,7 +44,7 @@ export default function ActorScreen({ scrollContainerHeight }) {
           </div>
         </div>
         <div className={"image-modal"}>
-          <img src={meshImg} alt={'mesh'} className={'mesh-img'}/>
+          <img src={meshImg} alt={'mesh'} className={'mesh-img img-open-animation'}/>
           <img src={actorImg} alt={'actor'} className={'actor-img'} style={{clipPath: `inset(0% 0% ${100*(1 -Math.max(scrollRatio, 0))}% 0%)`}}/>
         </div>
       </div>

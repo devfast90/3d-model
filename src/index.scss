@@ -40,3 +40,19 @@ code {
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
+.img-open-animation {
+  transform: translateY(0);
+  animation-name: imgOpenAnimation;
+  animation-timing-function:ease;
+  animation-duration: 2s;
+  animation-delay: 0.1s;
+}
+@keyframes imgOpenAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+
+  }
+}
