@@ -1,4 +1,4 @@
-import "./CircleScreen.css";
+import "./CircleScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import circleActor from "../../../assets/images/circle-screen/cicle-actor.png";
 import Header1 from "../../../shared/components/header1/Header1";

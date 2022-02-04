@@ -16,6 +16,32 @@ $gutter-medium-high: 24px !default;
 $gutter-large: 32px !default;
 $header-color: red;
 
+@mixin hideScrollBar(){
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+//.container::-webkit-scrollbar {
+//  display: none;  /* Safari and Chrome */
+//}
+
+@mixin minMedia($breakpoint){
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin maxMedia($breakpoint){
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin minMaxMedia($minBreakPoint, $maxBreakPoint){
+  @media (min-width: $minBreakPoint) and (max-width: $maxBreakPoint) {
+    @content;
+  }
+}
+
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == 'small-only-iphone' {
     @media (max-width: $bp-small) {

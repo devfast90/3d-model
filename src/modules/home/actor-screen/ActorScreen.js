@@ -2,6 +2,8 @@ import Header1 from "../../../shared/components/header1/Header1";
 import "./ActorScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import quoteIcon from "../../../assets/images/quote-icon.svg";
+import actorImg from '../../../assets/images/actor-screen/actor.png';
+import meshImg from '../../../assets/images/actor-screen/mesh.png';
 import {useEffect, useState} from "react";
 
 export default function ActorScreen({ scrollContainerHeight }) {
@@ -42,11 +44,8 @@ export default function ActorScreen({ scrollContainerHeight }) {
           </div>
         </div>
         <div className={"image-modal"}>
-          <div className={`mash ${mashToTop ? 'to-top': ''}`}/>
-          <div
-            className={"actor"}
-            style={{ height: `${(scrollRatio) * 100}%` }}
-          />
+          <img src={meshImg} alt={'mesh'} className={'mesh-img'}/>
+          <img src={actorImg} alt={'actor'} className={'actor-img'} style={{clipPath: `inset(0% 0% ${100*(1 -Math.max(scrollRatio, 0))}% 0%)`}}/>
         </div>
       </div>
     </>

@@ -1,3 +1,5 @@
+@import './assets/scss/__mixin.scss';
+
 .App {
   position: relative;
   display: flex;
@@ -5,4 +7,7 @@
   height: 100vh;
   --header-height: 100px;
   --white-background: #F7F6F2;
+  @include breakpoint(tablet-and-lower){
+    --header-height: 70px;
+  }
 }
