@@ -19,6 +19,9 @@ $header-color: red;
 @mixin hideScrollBar(){
   -ms-overflow-style: none;
   scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 //.container::-webkit-scrollbar {
 //  display: none;  /* Safari and Chrome */
