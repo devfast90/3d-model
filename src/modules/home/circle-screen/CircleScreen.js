@@ -53,14 +53,12 @@ function CircleFirstPart({scrollRatio}) {
         })
     }, []);
 
-    // console.log('\n\n');
     return (
-        <div className={"circle-text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden'}}>
+        <div className={"circle-text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden', display: scrollRatio >=1? 'none':'flex'}}>
             <div className={"text-content"}>
                 {textContents.map(({content, maxRatio, minRatio}, index) => {
-                    // console.log(`localScrollRatio -> ${localScrollRatio}, Min Ratio -> ${minRatio}, Max Ratio -> ${maxRatio}`);
                     return <span style={
-                            localScrollRatio > minRatio && localScrollRatio < maxRatio ? blackText : {}
+                            localScrollRatio >= minRatio && localScrollRatio <= maxRatio ? blackText : {}
                     }
                                  key={index}>
                          {content}{' '}
@@ -83,7 +81,7 @@ function CircleSecondPart({scrollRatio}) {
     }
 
     return (
-        <>
+        <div className={'circle-second-part-container'}>
             <img
                 src={circleActor}
                 alt={"circle-actor"}
@@ -98,6 +96,6 @@ function CircleSecondPart({scrollRatio}) {
                     Six avatar<br/>archetypes.<br/><br/>10k Bad Influencers.<br/><br/>All want to be<br/>‘Metaverse famous’
                 </Header3>
             </div>
-        </>
+        </div>
     );
 }

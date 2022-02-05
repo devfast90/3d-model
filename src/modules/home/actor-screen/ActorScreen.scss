@@ -61,9 +61,6 @@ $small-screen-break: 600px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    @include maxMedia(1100px) {
-      display: none;
-    }
 
     img {
       height: 90%;

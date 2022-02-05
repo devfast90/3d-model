@@ -1,4 +1,4 @@
-import "./SquareScreen.css";
+import "./SquareScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import {useEffect, useMemo} from "react";
 
@@ -29,9 +29,6 @@ export default function SquareScreen({scrollContainerHeight}) {
             if (height >= 100) {
                 dimension.border = "0px solid black";
                 dimension.borderRadius = "0px";
-            } else {
-                dimension.border = "10px solid black";
-                dimension.borderRadius = "40px";
             }
             return dimension;
         }
@@ -53,7 +50,7 @@ export default function SquareScreen({scrollContainerHeight}) {
                     <div
                         className="video-container"
                         style={{
-                            borderRadius: scrollRatio >= MAX_SCROLL_RATIO_FOR_FULL_SCREEN ? 0 : 30
+                            borderRadius: scrollRatio >= MAX_SCROLL_RATIO_FOR_FULL_SCREEN ? 0 : undefined
                         }}
                     >
                         <video

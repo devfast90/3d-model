@@ -1,3 +1,4 @@
+@import '../../../assets/scss/_mixin';
 
 .square-screen{
     display: flex;
@@ -6,13 +7,19 @@
     flex: 1;
     --square-height: 50vh;
     --square-width: 60vw;
+    --border-width: 10px;
+    --inner-radius: 30px;
+    --outer-radius: calc(var(--inner-radius) + var(--border-width));
+    @include breakpoint(medium-and-lower){
+        --border-width: 5px;
+    }
 }
 
 .screen-container .square{
     width: var(--square-width);
     height: var(--square-height);
-    border: 10px solid black;
-    border-radius: 40px;
+    border: var(--border-width) solid black;
+    border-radius: var(--outer-radius);
     box-sizing: border-box;
     position: relative;
 }
@@ -32,7 +39,7 @@
 .screen-container .square .video-container{
     height: 100%;
     width: 100%;
-    border-radius: 30px;
+    border-radius: var(--inner-radius);
     overflow: hidden;
 }
 

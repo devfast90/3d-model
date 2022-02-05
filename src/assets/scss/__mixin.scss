@@ -1,3 +1,4 @@
+$bp-mobile-break: 1023px !default;
 $bp-small: 320px !default;
 $bp-medium: 680px !default;
 $bp-medium-high: 960px !default;
@@ -26,6 +27,13 @@ $header-color: red;
 //.container::-webkit-scrollbar {
 //  display: none;  /* Safari and Chrome */
 //}
+
+@mixin isMobile(){
+  @media (max-width: $bp-mobile-break) {
+    @content;
+  }
+}
+
 
 @mixin minMedia($breakpoint){
   @media (min-width: $breakpoint) {
