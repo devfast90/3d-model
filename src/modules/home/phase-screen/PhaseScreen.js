@@ -1,4 +1,4 @@
-import "./PhaseScreen.css";
+import "./PhaseScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
 import SubHeader from "../../../shared/components/sub-header/SubHeader";
