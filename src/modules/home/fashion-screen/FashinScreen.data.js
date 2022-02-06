@@ -11,27 +11,32 @@ const column1Images = [
     {
         imageSrc: pinkJacketImg,
         imageId: 1.1,
-        imageStyle: {height: 200, marginBottom: 200},
+        containerStyle: {height: 400},
+        imageStyle: {width: 300, marginBottom: 200},
     },
     {
         imageSrc: snickersImg,
         imageId: 1.2,
-        imageStyle: {height: 160, marginBottom: 350, left: '20%'}
+        containerStyle: {height: 160 + 350},
+        imageStyle: {width: 363, marginBottom: 350, left: '20%'}
     },
     {
         imageSrc: hoodieImg,
         imageId: 1.3,
-        imageStyle: {height: 340, left: -20, marginBottom: 400}
+        containerStyle: {height: 340 + 400},
+        imageStyle: {width: 335, left: -20, marginBottom: 400}
     },
     {
         imageSrc: shoeImg,
         imageId: 1.4,
-        imageStyle: {height: 190,  left: -120, marginBottom: 200},
+        containerStyle: {height: 190+ 200},
+        imageStyle: {width: 363,  left: '-20%', marginBottom: 200},
     },
     {
         imageSrc: pinkJacketImg,
         imageId: 1.5,
-        imageStyle: {left: 200, height: 170},
+        containerStyle: {height: 170},
+        imageStyle: {left: '20%', width: 256},
     },
 ];
 
@@ -39,27 +44,32 @@ const column2Images = [
     {
         imageSrc: shoeImg,
         imageId: 2.1,
-        imageStyle: {height: 140, top: 20, left: '30%', marginBottom: 300},
+        containerStyle: {height: 140 + 300},
+        imageStyle: {width: 313, top: 20, left: '30%', marginBottom: 300},
     },
     {
         imageSrc: nopeShirtImg,
         imageId: 2.2,
-        imageStyle: {marginBottom: 200, height: 250, left: 0},
+        containerStyle: {height: 250 + 200},
+        imageStyle: {marginBottom: 200, width: 363, left: 0},
     },
     {
         imageSrc: maskImg,
         imageId: 2.3,
-        imageStyle: {height: 200, left: '30%', marginBottom: 300},
+        containerStyle: {height: 200 + 300},
+        imageStyle: {width: 150, left: '30%', marginBottom: 300},
     },
     {
         imageSrc: whiteTShirt,
         imageId: 2.4,
-        imageStyle: {height: 400, left: 30, marginBottom: 100},
+        containerStyle: {height: 400 + 100},
+        imageStyle: {width: 363, left: 30, marginBottom: 100},
     },
     {
         imageSrc: snickersImg,
         imageId: 2.5,
-        imageStyle: {height: 150, left: -140},
+        containerStyle: {height: 150},
+        imageStyle: {width: 363, left: '-20%'},
     }
 ]
 
@@ -67,27 +77,32 @@ const column3Images = [
     {
         imageSrc: snickersImg,
         imageId: 3.1,
-        imageStyle: {height: 100, left: 200, marginTop: 200, marginBottom: 300}
+        containerStyle: {height: 100+ 200 + 300},
+        imageStyle: {width: 280, left: '20%', marginTop: 200, marginBottom: 300}
     },
     {
         imageSrc: ladyDressImg,
         imageId: 3.2,
-        imageStyle: {marginBottom: 200, height: 400, left: 30},
+        containerStyle: {height: 400+200},
+        imageStyle: {marginBottom: 200, width: 156, left: 30},
     },
     {
         imageSrc: shoeImg,
         imageId: 3.3,
-        imageStyle: {marginBottom: 200, height: 150, right: -200},
+        containerStyle: {height: 150 + 200},
+        imageStyle: {marginBottom: 200, width: 335, right: '-20%'},
     },
     {
         imageSrc: pinkJacketImg,
         imageId: 3.4,
-        imageStyle: {marginBottom: 200, height: 200, right: 0},
+        containerStyle: {height: 200 + 200},
+        imageStyle: {marginBottom: 200, width: 301, right: 0},
     },
     {
         imageSrc: maskImg,
         imageId: 3.5,
-        imageStyle: {marginBottom: 100, height: 160, left: 200},
+        containerStyle: {height: 160 + 100},
+        imageStyle: {marginBottom: 100, width: 172, left: '30%'},
     }
 ]
 

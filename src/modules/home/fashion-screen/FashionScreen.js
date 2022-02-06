@@ -1,4 +1,4 @@
-import "./FashionScreen.css";
+import "./FashionScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
 import {imageList} from "./FashinScreen.data";
