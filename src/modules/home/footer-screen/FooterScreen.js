@@ -1,4 +1,4 @@
-import "./FooterScreen.css";
+import "./FooterScreen.scss";
 import oxImage from '../../../assets/images/footer-screen/0-x.png';
 import badInfluenceWhiteLogo from '../../../assets/images/footer-screen/BadInfluence_Logo.svg';
 import footerWhiteLogo from '../../../assets/images/footer-screen/footer-white-logo.svg';
