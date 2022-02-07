@@ -5,6 +5,9 @@ import nopeShirtImg from "../../../assets/images/fashion-screen/nope-shirt.png";
 import maskImg from "../../../assets/images/fashion-screen/mask.png";
 import whiteTShirt from "../../../assets/images/fashion-screen/white-t-shirt.png";
 import hoodieImg from "../../../assets/images/fashion-screen/hoodie.png";
+import armyHelmetImg from "../../../assets/images/fashion-screen/army-helmet.png";
+import asianDressImg from "../../../assets/images/fashion-screen/asian-dress.png";
+import bagImg from "../../../assets/images/fashion-screen/bag.png";
 import ladyDressImg from "../../../assets/images/fashion-screen/lady-dress.png";
 
 const column1Images = [
@@ -27,7 +30,7 @@ const column1Images = [
         imageStyle: {width: 335, left: -20, marginBottom: 400}
     },
     {
-        imageSrc: shoeImg,
+        imageSrc: armyHelmetImg,
         imageId: 1.4,
         containerStyle: {height: 190+ 200},
         imageStyle: {width: 363,  left: '-20%', marginBottom: 200},
@@ -54,7 +57,7 @@ const column2Images = [
         imageStyle: {marginBottom: 200, width: 363, left: 0},
     },
     {
-        imageSrc: maskImg,
+        imageSrc: asianDressImg,
         imageId: 2.3,
         containerStyle: {height: 200 + 300},
         imageStyle: {width: 150, left: '30%', marginBottom: 300},
@@ -93,7 +96,7 @@ const column3Images = [
         imageStyle: {marginBottom: 200, width: 335, right: '-20%'},
     },
     {
-        imageSrc: pinkJacketImg,
+        imageSrc: bagImg,
         imageId: 3.4,
         containerStyle: {height: 200 + 200},
         imageStyle: {marginBottom: 200, width: 301, right: 0},

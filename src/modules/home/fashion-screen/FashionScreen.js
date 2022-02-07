@@ -6,7 +6,7 @@ import {useRef} from "react";
 import quoteIcon from "../../../assets/images/quote-icon-2.svg";
 
 const scrollMovementPixels = 20;
-const initialBottomPosition = 250;
+const initialBottomPosition = 500;
 
 function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     const imageRef = useRef();
@@ -16,7 +16,7 @@ function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     });
 
     let transformY = initialBottomPosition;
-    if (scrollRatio >= -0.9) {
+    if (scrollRatio >= -0.6) {
         transformY = scrollMovementPixels;
     }
 
