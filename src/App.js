@@ -7,7 +7,7 @@ import PreSale from "./pages/PreSale";
 
 export default function App() {
   return (
-    <div className="App">
+    <>
       <Routes>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
@@ -15,6 +15,6 @@ export default function App() {
         <Route path="pre-sale" element={<PreSale />} />
         <Route path="public-sale" element={<PublicSale />} />
       </Routes>
-    </div>
+    </>
   );
 }
