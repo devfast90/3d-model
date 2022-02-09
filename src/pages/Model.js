@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -7,6 +6,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 class App extends React.Component {
   componentDidMount() {
+    const {setIsModelOpen} = this.props;
     // === Creating the Scene, Camera, Renderor ===
     var scene = new THREE.Scene();
     var female, male, mask;
@@ -154,6 +154,7 @@ class App extends React.Component {
       }
 
       if (camera.position.z > -55 && camera.position.z < 1) {
+        setIsModelOpen(false);
         var y = 30;
         var p = mask.position;
         p.y = y + camera.position.z * 0.5;
@@ -171,9 +172,10 @@ class App extends React.Component {
     animate();
   }
   render() {
+    const {isModelOpen} = this.props;
     return (
       <div>
-        <div ref={(ref) => (this.mount = ref)} />
+        <div style={{display: isModelOpen?'block': 'none' }} ref={(ref) => (this.mount = ref)} />
       </div>
     );
   }
