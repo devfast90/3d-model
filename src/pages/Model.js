@@ -4,7 +4,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
-class App extends React.Component {
+class Model extends React.Component {
   componentDidMount() {
     const {setIsModelOpen} = this.props;
     // === Creating the Scene, Camera, Renderor ===
@@ -171,14 +171,15 @@ class App extends React.Component {
     }
     animate();
   }
+
   render() {
     const {isModelOpen} = this.props;
     return (
       <div>
-        <div style={{display: isModelOpen?'block': 'none' }} ref={(ref) => (this.mount = ref)} />
+        <div style={{display: true?'block': 'none' }} ref={(ref) => (this.mount = ref)} />
       </div>
     );
   }
 }
 
-export default App;
+export default Model;

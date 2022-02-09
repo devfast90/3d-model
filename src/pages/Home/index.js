@@ -14,20 +14,23 @@ import {useState} from "react";
 export default function App() {
     const fashionScreenHeight = '2225px';
     const phaseScreenHeight = '1640px';
-    const {isModelOpen, setIsModelOpen} = useState(true);
+    const [isModelOpen, setIsModelOpen] = useState(true);
     return (
-        <div className={'home'}>
-            <Model setIsModelOpen={setIsModelOpen} isModelOpen={isModelOpen}/>
-            {/*<ScrollContainer>*/}
-            {/*    <ActorScreen scrollContainerHeight={"600vh"}/>*/}
-            {/*    <SquareScreen scrollContainerHeight={"400vh"}/>*/}
-            {/*    <CircleScreen/>*/}
-            {/*    <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>*/}
-            {/*    <BlackScreen scrollContainerHeight={"600vh"} />*/}
-            {/*    <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>*/}
-            {/*    <TeamScreen scrollContainerHeight={"600vh"}/>*/}
-            {/*    <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>*/}
-            {/*</ScrollContainer>*/}
-        </div>
+        <>
+            <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}/>
+            {/*<div className={'home'}>*/}
+
+            {/*    /!*<ScrollContainer>*!/*/}
+            {/*    /!*    <ActorScreen scrollContainerHeight={"600vh"}/>*!/*/}
+            {/*    /!*    <SquareScreen scrollContainerHeight={"400vh"}/>*!/*/}
+            {/*    /!*    <CircleScreen/>*!/*/}
+            {/*    /!*    <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>*!/*/}
+            {/*    /!*    <BlackScreen scrollContainerHeight={"600vh"} />*!/*/}
+            {/*    /!*    <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>*!/*/}
+            {/*    /!*    <TeamScreen scrollContainerHeight={"600vh"}/>*!/*/}
+            {/*    /!*    <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>*!/*/}
+            {/*    /!*</ScrollContainer>*!/*/}
+            {/*</div>*/}
+        </>
     );
 }
