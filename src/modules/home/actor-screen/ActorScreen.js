@@ -5,9 +5,11 @@ import quoteIcon from "../../../assets/images/quote-icon.svg";
 import actorImg from '../../../assets/images/actor-screen/actor.png';
 import meshImg from '../../../assets/images/actor-screen/mesh.png';
 import useScreenType from "../../../shared/hooks/useScreenType";
+import {useEffect, useLayoutEffect, useState} from "react";
 
-export default function ActorScreen({ scrollContainerHeight }) {
+export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
   const {isMobile} = useScreenType();
+  const [isFirstLoad, setIsFirstLoad]= useState(true);
   const scrollRatio = useWindowOnScrollRatio({
     scrollContainerHeight,
     offsetSelector: ".actor-screen"
@@ -20,6 +22,17 @@ export default function ActorScreen({ scrollContainerHeight }) {
   const getImageScrollRatio = (scrollRatio)=>{
     return isMobile ? Math.min((scrollRatio - 0.5) * 2, 1): scrollRatio;
   };
+
+  useLayoutEffect(()=>{
+    document.querySelector('.scroll-container').scrollTo(0,100);
+  }, []);
+
+  useEffect(()=>{
+    if(scrollRatio === 0 && !isFirstLoad){
+      setIsModelOpen(true);
+    }
+    setIsFirstLoad(false);
+  },[scrollRatio]);
 
   return (
     <>

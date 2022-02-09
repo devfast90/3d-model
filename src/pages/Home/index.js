@@ -18,19 +18,18 @@ export default function App() {
     return (
         <>
             <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}/>
-            {/*<div className={'home'}>*/}
-
-            {/*    /!*<ScrollContainer>*!/*/}
-            {/*    /!*    <ActorScreen scrollContainerHeight={"600vh"}/>*!/*/}
-            {/*    /!*    <SquareScreen scrollContainerHeight={"400vh"}/>*!/*/}
-            {/*    /!*    <CircleScreen/>*!/*/}
-            {/*    /!*    <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>*!/*/}
-            {/*    /!*    <BlackScreen scrollContainerHeight={"600vh"} />*!/*/}
-            {/*    /!*    <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>*!/*/}
-            {/*    /!*    <TeamScreen scrollContainerHeight={"600vh"}/>*!/*/}
-            {/*    /!*    <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>*!/*/}
-            {/*    /!*</ScrollContainer>*!/*/}
-            {/*</div>*/}
+            <div className={'home'} style={{display: isModelOpen? 'none': 'flex'}}>
+                <ScrollContainer>
+                    <ActorScreen scrollContainerHeight={"600vh"} setIsModelOpen={setIsModelOpen}/>
+                    <SquareScreen scrollContainerHeight={"400vh"}/>
+                    <CircleScreen/>
+                    <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
+                    <BlackScreen scrollContainerHeight={"600vh"} />
+                    <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>
+                    <TeamScreen scrollContainerHeight={"600vh"}/>
+                    <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
+                </ScrollContainer>
+            </div>
         </>
     );
 }
