@@ -6,37 +6,29 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 class Model extends React.Component {
   componentDidMount() {
-    const {setIsModelOpen} = this.props;
     // === Creating the Scene, Camera, Renderor ===
-    var scene = new THREE.Scene();
-    var female, male, mask;
-    var camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      20000
-    );
-    camera.position.set(0, 16, 70);
-    // camera.lookAt( 0, 16, -30 );
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 20000);
+    this.camera.position.set(0, 16, 70);
 
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor("#202020", 1.0);
-    document.body.appendChild(renderer.domElement);
-    window.addEventListener("resize", onWindowResize);
+    this.renderer = new THREE.WebGLRenderer();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setClearColor("#202020", 1.0);
+    document.body.appendChild(this.renderer.domElement);
+    window.addEventListener("resize", this.onWindowResize);
 
-    const controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(this.camera, this.renderer.domElement);
     controls.target.set(0, 15, -43);
     controls.enableRotate = false;
     controls.update();
     //==============
     //========= light ==========
     const ambient_light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
-    scene.add(ambient_light);
+    this.scene.add(ambient_light);
 
     const pointLight = new THREE.PointLight(0xeeeeee, 0.4);
     pointLight.position.set(0, 20, 20);
-    scene.add(pointLight);
+    this.scene.add(pointLight);
 
     const spotLight_pink = new THREE.SpotLight(0xff00ff, 3, 150, 0.18);
     spotLight_pink.position.set(-40, 18, 11);
@@ -44,8 +36,8 @@ class Model extends React.Component {
     targetObject_pink.position.set(-4, 12, 0);
     spotLight_pink.target = targetObject_pink;
     spotLight_pink.castShadow = true;
-    scene.add(spotLight_pink);
-    scene.add(targetObject_pink);
+    this.scene.add(spotLight_pink);
+    this.scene.add(targetObject_pink);
 
     const spotLight_yellow = new THREE.SpotLight(0xffff00, 3, 150, 0.18);
     spotLight_yellow.position.set(40, 18, 10);
@@ -53,8 +45,8 @@ class Model extends React.Component {
     targetObject_yellow.position.set(4, 12, -1);
     spotLight_yellow.target = targetObject_yellow;
     spotLight_yellow.castShadow = true;
-    scene.add(spotLight_yellow);
-    scene.add(targetObject_yellow);
+    this.scene.add(spotLight_yellow);
+    this.scene.add(targetObject_yellow);
 
     const spotLight_white = new THREE.SpotLight(0xffffff, 1, 300, 0.5);
     spotLight_white.position.set(0, 60, 10);
@@ -62,8 +54,8 @@ class Model extends React.Component {
     targetObject_white.position.set(0, 25, -70);
     spotLight_white.target = targetObject_white;
     spotLight_white.castShadow = true;
-    scene.add(spotLight_white);
-    scene.add(targetObject_white);
+    this.scene.add(spotLight_white);
+    this.scene.add(targetObject_white);
 
     //============ ground =======
     const plane_geometry = new THREE.PlaneGeometry(1000, 1000);
@@ -74,19 +66,19 @@ class Model extends React.Component {
     const plane = new THREE.Mesh(plane_geometry, plane_material);
     plane.rotateX(-3.141592 / 2);
     plane.position.set(0, -10, 0);
-    // scene.add( plane );
+    // this.scene.add( plane );
 
-    const loader = new GLTFLoader();
+    this.loader = new GLTFLoader();
     // ============= female model=======
-    // const loader = new GLTFLoader();
-    loader.load(
+    // const this.loader = new GLTFLoader();
+    this.loader.load(
       "3d-models/female.glb",
-      function (gltf) {
-        female = gltf.scene.children[0];
-        female.visible = false;
-        scene.add(female);
-        female.position.set(4, 0, -1);
-        female.scale.set(100, 100, 100);
+      (gltf) => {
+        this.female = gltf.scene.children[0];
+        this.female.visible = false;
+        this.scene.add(this.female);
+        this.female.position.set(4, 0, -1);
+        this.female.scale.set(100, 100, 100);
       },
       (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -103,13 +95,13 @@ class Model extends React.Component {
     loader_male.setDRACOLoader(dracoLoader);
     loader_male.load(
       "3d-models/male.glb",
-      function (gltf) {
-        male = gltf.scene.children[0];
-        male.visible = false;
-        scene.add(male);
+      (gltf) => {
+        this.male = gltf.scene.children[0];
+        this.male.visible = false;
+        this.scene.add(this.male);
 
-        male.position.set(-4, 0, 0);
-        male.scale.set(100, 100, 100);
+        this.male.position.set(-4, 0, 0);
+        this.male.scale.set(100, 100, 100);
       },
       (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -121,27 +113,37 @@ class Model extends React.Component {
     // const geometry = new THREE.SphereGeometry( 0.01, 32, 16 );
     // const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
     // const sphere = new THREE.Mesh( geometry, material );
-    // scene.add( sphere );
+    // this.scene.add( sphere );
     // sphere.position.set(0, 28, -70);
     //=================================
 
     // ====================
-    var animate = function () {
-      requestAnimationFrame(animate);
-      if (male && female) {
-        if (!male.visible && !female.visible) {
-          male.visible = true;
-          female.visible = true;
+    this.animate();
+  }
 
-          // ============= mask model=======
-          loader.load(
+  onWindowResize = () => {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
+  animate = () => {
+    requestAnimationFrame(this.animate);
+    // const {setIsModelOpen} = this.props;
+    if (this.male && this.female) {
+      if (!this.male.visible && !this.female.visible) {
+        this.male.visible = true;
+        this.female.visible = true;
+
+        // ============= this.mask model=======
+        this.loader.load(
             "3d-models/to_the_top_kitsune_mask/scene.gltf",
-            function (gltf) {
-              mask = gltf.scene.children[0];
-              // mask.rotateX(3.141592/2);
-              mask.scale.set(80, 40, 80);
-              mask.position.set(0, 30, -60);
-              scene.add(mask);
+             (gltf) => {
+              this.mask = gltf.scene.children[0];
+              // this.mask.rotateX(3.141592/2);
+              this.mask.scale.set(80, 40, 80);
+              this.mask.position.set(0, 30, -60);
+              this.scene.add(this.mask);
             },
             (xhr) => {
               console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -149,31 +151,23 @@ class Model extends React.Component {
             (error) => {
               console.log(error);
             }
-          );
-        }
+        );
       }
-
-      if (camera.position.z > -55 && camera.position.z < 1) {
-        setIsModelOpen(false);
-        var y = 30;
-        var p = mask.position;
-        p.y = y + camera.position.z * 0.5;
-        mask.position.copy(p);
-        console.log(mask.position.y + ":::::" + camera.position.z);
-      }
-      renderer.render(scene, camera);
-    };
-
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
     }
-    animate();
+
+    if (this.camera.position.z > -55 && this.camera.position.z < 1) {
+      // setIsModelOpen(false);
+      var y = 30;
+      var p = this.mask.position;
+      p.y = y + this.camera.position.z * 0.5;
+      this.mask.position.copy(p);
+      console.log(this.mask.position.y + ":::::" + this.camera.position.z);
+    }
+    this.renderer.render(this.scene, this.camera);
   }
 
   render() {
-    const {isModelOpen} = this.props;
+    // const {isModelOpen} = this.props;
     return (
       <div>
         <div style={{display: true?'block': 'none' }} ref={(ref) => (this.mount = ref)} />
