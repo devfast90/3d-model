@@ -9,11 +9,12 @@ import TeamScreen from "../../modules/home/team-screen/TeamScreen";
 import FooterScreen from "../../modules/home/footer-screen/FooterScreen";
 import './Home.scss';
 import Model from "../Model";
+import {useState} from "react";
 
 export default function App() {
     const fashionScreenHeight = '2225px';
     const phaseScreenHeight = '1640px';
-    const {isModelOpen, setIsModelOpen} = this.state(true);
+    const {isModelOpen, setIsModelOpen} = useState(true);
     return (
         <div className={'home'}>
             <Model setIsModelOpen={setIsModelOpen} isModelOpen={isModelOpen}/>
