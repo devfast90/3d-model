@@ -18,7 +18,7 @@ export default function App() {
     return (
         <>
             <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}/>
-            <div className={'home'} style={{display: isModelOpen? 'none': 'flex'}}>
+            {!isModelOpen && <div className={'home'}>
                 <ScrollContainer>
                     <ActorScreen scrollContainerHeight={"600vh"} setIsModelOpen={setIsModelOpen}/>
                     <SquareScreen scrollContainerHeight={"400vh"}/>
@@ -29,7 +29,7 @@ export default function App() {
                     <TeamScreen scrollContainerHeight={"600vh"}/>
                     <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
                 </ScrollContainer>
-            </div>
+            </div>}
         </>
     );
 }

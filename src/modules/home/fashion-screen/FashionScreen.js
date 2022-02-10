@@ -5,8 +5,8 @@ import {imageList} from "./FashinScreen.data";
 import {useRef} from "react";
 import quoteIcon from "../../../assets/images/quote-icon-2.svg";
 
-const scrollMovementPixels = 20;
-const initialBottomPosition = 500;
+// const scrollMovementPixels = '20px';
+const initialBottomPosition = '270px';
 
 function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     const imageRef = useRef();
@@ -16,8 +16,8 @@ function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     });
 
     let transformY = initialBottomPosition;
-    if (scrollRatio >= -0.6) {
-        transformY = scrollMovementPixels;
+    if (scrollRatio >= -0.8) {
+        transformY = 0;
     }
 
     return <div className={`image-container`} style={containerStyle} ref={imageRef} key={imageId}>
@@ -27,7 +27,7 @@ function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
             style={{
                 ...imageStyle,
                 opacity: imageSrc ? 1 : 0,
-                transform: `translateY(${transformY}px)`
+                transform: `translateY(${transformY})`
             }}
             alt={'fashion image'}
         />}
