@@ -13,25 +13,33 @@ export const FONT_COLORS = {
 export default function ScrollContainer({children}) {
     const [fontColor, setFontColor] = useState(FONT_COLORS.BLACK);
 
+    const renderContent = ({scrollContainerHeight, child, props, hideHeaderFooter, index}) => {
+        return <>
+            {!hideHeaderFooter ? <>
+                <Header fontColor={fontColor} index={index}/>
+                <SideText fontColor={fontColor} index={index}/>
+                <Footer fontColor={fontColor} index={index}/>
+            </> : null}
+            {React.cloneElement(child, {...props, scrollContainerHeight, setFontColor})}
+        </>
+    }
+
     return <div className={'scroll-container'}>
         {(Array.isArray(children) ? children : [children]).map((child, index) => {
             const {
-                props: {scrollContainerHeight = '300vh', contentHeight = '100vh', hideHeaderFooter},
+                props: {scrollContainerHeight = '300vh', contentHeight = '100vh', hideHeaderFooter, useSticky = true},
                 props,
                 type: {name: contentType}
             } = child;
-            return <StickyView
+            return useSticky ? <StickyView
                 scrollContainerHeight={scrollContainerHeight}
                 key={contentType}
                 contentHeight={contentHeight}
             >
-                {!hideHeaderFooter ? <>
-                        <Header fontColor={fontColor} index={index}/>
-                        <SideText fontColor={fontColor} index={index}/>
-                        <Footer fontColor={fontColor} index={index}/>
-                    </>:null}
-                {React.cloneElement(child, {...props, scrollContainerHeight, setFontColor})}
-            </StickyView>
+                {renderContent({scrollContainerHeight, child, props, hideHeaderFooter, index})}
+            </StickyView> : <React.Fragment key={contentType}>
+                {renderContent({scrollContainerHeight, child, props, hideHeaderFooter, index})}
+            </React.Fragment>;
         })}
     </div>
 }

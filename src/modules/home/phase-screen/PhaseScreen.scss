@@ -9,7 +9,6 @@
   flex: 1;
   background: white;
   transition: all 2s;
-  //padding-top: var(--header-height);
   overflow: scroll;
   --middle-line-position: 50%;
   --middle-line-width: 4px;
@@ -18,7 +17,7 @@
   }
 
   .middle-line {
-    height: 0px;
+    height: 100%;
     width: var(--middle-line-width);
     transition: height 3s;
     position: absolute;
@@ -33,13 +32,14 @@
     opacity: 0;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: calc(calc(300px * 2) + calc(130px * 2));
+    width: 100vw;
+    max-width: 1800px;
     background-size: var(--center-image-width) auto;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    transition: opacity 1.5s;
+    transition: opacity 0.5s;
     background-image: url('../../../../public/images/phase-screen/phase-tracker.svg');
     @include isMobile(){
       background-position: calc(var(--middle-line-position) - calc(var(--center-image-width)/2) + calc(var(--middle-line-width)) + 1px) center;
@@ -49,6 +49,7 @@
     }
 
     &.phase-1{
+      margin-top: 100px;
       .left-container{
         @include isMobile(){
           margin-top: 50px;
@@ -58,7 +59,14 @@
 
     .header1 {
       margin-bottom: 30px;
+      font-size: 60px;
       margin-top: 0px;
+      @include maxMedia(1250px){
+        font-size: 50px;
+      }
+      @include maxMedia(1150px){
+        font-size: 40px;
+      }
       @include isMobile(){
         font-size: 50px;
       }
@@ -72,15 +80,11 @@
       }
     }
 
-    .left-container {
-      width: 300px;
-      margin-right: 130px;
-    }
-
-    .right-container {
+    .left-container, .right-container {
+      margin: 0px 5vw;
       position: relative;
-      width: 300px;
-      margin-left: 130px;
+      flex: 1;
+      min-width: 1px;
     }
 
     .left-container, .right-container{
