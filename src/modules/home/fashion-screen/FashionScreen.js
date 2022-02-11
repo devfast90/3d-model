@@ -2,21 +2,31 @@ import "./FashionScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
 import {imageList} from "./FashinScreen.data";
-import {useRef} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 import quoteIcon from "../../../assets/images/quote-icon-2.svg";
+import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
+import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
-// const scrollMovementPixels = '20px';
-const initialBottomPosition = '270px';
+const initialBottomPosition = '400px';
+const triggerBefore = 200;
 
 function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     const imageRef = useRef();
     const imageClass = `fashion-img-${String(imageId).replace(/\./g, '-')}`;
-    const scrollRatio = useWindowOnScrollRatio({
-        offsetSelector: `.${imageClass}`,
-    });
+    const {windowHeight} = useWindowDimension();
+    const [scrollTrigger, setScrollTrigger] = useState(0);
+    const {scrollY} = useOnContentScroll({scrollContainerSelector: '.scroll-container'});
+
+    useLayoutEffect(()=>{
+        const fashionScreenTop = document.querySelector('.fashion-screen').parentElement.parentElement.offsetTop;
+        const imageTop = document.querySelector(`.${imageClass}`).offsetTop;
+        const absoluteTop = fashionScreenTop + imageTop - windowHeight;
+        const scrollTriggerValue = absoluteTop + triggerBefore;
+        setScrollTrigger(scrollTriggerValue);
+    },[windowHeight]);
 
     let transformY = initialBottomPosition;
-    if (scrollRatio >= -0.8) {
+    if(scrollY>scrollTrigger){
         transformY = 0;
     }
 

@@ -14,15 +14,15 @@ const column1Images = [
     {
         imageSrc: pinkJacketImg,
         imageId: 1.1,
-        containerStyle: {height: 400},
-        imageStyle: {width: 300, marginBottom: 200},
+        containerStyle: {height: 400 + 400},
+        imageStyle: {width: 500, marginBottom: 400},
     },
-    {
-        imageSrc: snickersImg,
-        imageId: 1.2,
-        containerStyle: {height: 160 + 350},
-        imageStyle: {width: 363, marginBottom: 350, left: '20%'}
-    },
+    // {
+    //     imageSrc: snickersImg,
+    //     imageId: 1.2,
+    //     containerStyle: {height: 160 + 350},
+    //     imageStyle: {width: 363, marginBottom: 350, left: '20%'}
+    // },
     {
         imageSrc: hoodieImg,
         imageId: 1.3,
@@ -32,15 +32,15 @@ const column1Images = [
     {
         imageSrc: armyHelmetImg,
         imageId: 1.4,
-        containerStyle: {height: 190+ 200},
-        imageStyle: {width: 363,  left: '-20%', marginBottom: 200},
+        containerStyle: {height: 463 + 200},
+        imageStyle: {width: 463,  left: '-20%', marginBottom: 200},
     },
-    {
-        imageSrc: pinkJacketImg,
-        imageId: 1.5,
-        containerStyle: {height: 170},
-        imageStyle: {left: '20%', width: 256},
-    },
+    // {
+    //     imageSrc: pinkJacketImg,
+    //     imageId: 1.5,
+    //     containerStyle: {height: 170},
+    //     imageStyle: {left: '20%', width: 256},
+    // },
 ];
 
 const column2Images = [
@@ -59,8 +59,8 @@ const column2Images = [
     {
         imageSrc: asianDressImg,
         imageId: 2.3,
-        containerStyle: {height: 200 + 300},
-        imageStyle: {width: 150, left: '30%', marginBottom: 300},
+        containerStyle: {height: 400 + 300},
+        imageStyle: {width: 400, left: '30%', marginBottom: 300},
     },
     {
         imageSrc: whiteTShirt,
@@ -68,33 +68,33 @@ const column2Images = [
         containerStyle: {height: 400 + 100},
         imageStyle: {width: 363, left: 30, marginBottom: 100},
     },
-    {
-        imageSrc: snickersImg,
-        imageId: 2.5,
-        containerStyle: {height: 150},
-        imageStyle: {width: 363, left: '-20%'},
-    }
+    // {
+    //     imageSrc: snickersImg,
+    //     imageId: 2.5,
+    //     containerStyle: {height: 150},
+    //     imageStyle: {width: 363, left: '-20%'},
+    // }
 ]
 
 const column3Images = [
     {
         imageSrc: snickersImg,
         imageId: 3.1,
-        containerStyle: {height: 100+ 200 + 300},
-        imageStyle: {width: 280, left: '20%', marginTop: 200, marginBottom: 300}
+        containerStyle: {height: 153+ 200 + 300},
+        imageStyle: {width: 430, left: '20%', marginTop: 200, marginBottom: 300}
     },
     {
         imageSrc: ladyDressImg,
         imageId: 3.2,
-        containerStyle: {height: 400+200},
-        imageStyle: {marginBottom: 200, width: 156, left: 30},
+        containerStyle: {height: 588+200},
+        imageStyle: {marginBottom: 200, width: 230, left: 30},
     },
-    {
-        imageSrc: shoeImg,
-        imageId: 3.3,
-        containerStyle: {height: 150 + 200},
-        imageStyle: {marginBottom: 200, width: 335, right: '-20%'},
-    },
+    // {
+    //     imageSrc: shoeImg,
+    //     imageId: 3.3,
+    //     containerStyle: {height: 150 + 200},
+    //     imageStyle: {marginBottom: 200, width: 335, right: '-20%'},
+    // },
     {
         imageSrc: bagImg,
         imageId: 3.4,
@@ -104,8 +104,8 @@ const column3Images = [
     {
         imageSrc: maskImg,
         imageId: 3.5,
-        containerStyle: {height: 160 + 100},
-        imageStyle: {marginBottom: 100, width: 172, left: '30%'},
+        containerStyle: {height: 272 + 100},
+        imageStyle: {marginBottom: 100, width: 290, left: '30%'},
     }
 ]
 
