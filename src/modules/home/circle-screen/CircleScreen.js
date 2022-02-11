@@ -62,9 +62,7 @@ function CircleFirstPart({scrollRatio}) {
     };
 
     useLayoutEffect(() => {
-        setTimeout(()=>{
-            setTextContents(getTextContents());
-        },5000);
+        setTextContents(getTextContents());
     }, [windowHeight]);
 
     return (
