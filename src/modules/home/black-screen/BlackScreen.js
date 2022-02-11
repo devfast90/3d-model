@@ -30,7 +30,7 @@ export default function BlackScreen({scrollContainerHeight, setFontColor}) {
     };
 
     return (
-        <div className={"black-screen"} style={{background: scrollRatio >= 0 ? "black" : "white"}}>
+        <div className={"black-screen"} style={{background: scrollRatio >= -0.8 ? "black" : "white"}}>
             <BlackScreenText scrollRatio={getTextScrollRatio(scrollRatio)} isMobile={isMobile}/>
             <BlackScreenMedia scrollRatio={getMediaScrollRatio(scrollRatio)} isMobile={isMobile}/>
         </div>
@@ -38,21 +38,29 @@ export default function BlackScreen({scrollContainerHeight, setFontColor}) {
 }
 
 function BlackScreenMedia({scrollRatio, isMobile}) {
-    return ((isMobile && scrollRatio > 0) || !isMobile) && <>
-        <div className={"mash"} style={{transform: `rotateY(${Math.min(scrollRatio, 1) * 75}deg)`}}/>
-        <div className={"actor-image"}/>
-        <div className={"actor-video"} style={{opacity: scrollRatio > 0.1 ? 1 : 0}}>
-            <div className="video-container">
-                <video
-                    src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
-                    autoPlay
-                    loop
-                    playsInline
-                    muted
-                ></video>
-            </div>
+    return ((isMobile && scrollRatio > -0.8) || !isMobile) && <>
+        <div className={"actor-main-video"} style={{opacity: scrollRatio >= -0.8 ? 1 : 0}}>
+            <BlackScreenVideo className={'main'} src={'videos/black-screen/black-screen-main-video.mp4'}/>
+        </div>
+        <div className={"actor-top-video"}>
+            <BlackScreenVideo className={'top'} src={'videos/black-screen/black-screen-top-video.mp4'}/>
+        </div>
+        <div className={"actor-bottom-video"} style={{opacity: scrollRatio > 0.1 ? 1 : 0}}>
+            <BlackScreenVideo className={'bottom'} src={'videos/black-screen/black-screen-bottom-video.mp4'}/>
         </div>
     </>;
+}
+
+function BlackScreenVideo({className, src}){
+    return <div className={`video-container ${className}`}>
+        <video
+            src={src}
+            autoPlay
+            loop
+            playsInline
+            muted
+        ></video>
+    </div>
 }
 
 function BlackScreenText({scrollRatio, isMobile}) {

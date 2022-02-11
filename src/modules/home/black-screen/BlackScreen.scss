@@ -7,7 +7,7 @@
   position: relative;
   flex: 1;
   background: black;
-  transition: all 2s;
+  transition: all 1s;
 
   .text-container {
     position: absolute;
@@ -30,19 +30,12 @@
     }
   }
 
-  .mash {
-    height: 100%;
-    background-size: auto calc(100vh - var(--header-height));
-    background-position: center var(--header-height);
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../../../../public/images/black-screen/mesh.png');
+  .actor-main-video {
+    height: 90%;
+    transition: all 1s;
   }
 
-  .actor-image {
+  .actor-top-video {
     height: 250px;
     z-index: 1;
     background-size: 100% auto;
@@ -64,7 +57,7 @@
     }
   }
 
-  .actor-video {
+  .actor-bottom-video {
     --video-height: 350px;
     --video-width: 500px;
     height: var(--video-height);
@@ -81,14 +74,15 @@
       --video-width: 300px;
       right: 5vw;
     }
-    .video-container{
+  }
+
+  .video-container{
+    width: 100%;
+    height: 100%;
+    video {
       width: 100%;
       height: 100%;
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      object-fit: cover;
     }
   }
 }
