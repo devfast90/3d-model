@@ -13,7 +13,6 @@ import {useState} from "react";
 
 export default function App() {
     const fashionScreenHeight = '2225px';
-    const phaseScreenHeight = '1640px';
     const [isModelOpen, setIsModelOpen] = useState(true);
     return (
         <>
@@ -25,7 +24,7 @@ export default function App() {
                     <CircleScreen/>
                     <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
                     <BlackScreen scrollContainerHeight={"600vh"} />
-                    <PhaseScreen scrollContainerHeight={phaseScreenHeight} contentHeight={phaseScreenHeight}/>
+                    <PhaseScreen useSticky={false}/>
                     <TeamScreen scrollContainerHeight={"600vh"}/>
                     <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
                 </ScrollContainer>

@@ -30,11 +30,13 @@ export default function PhaseScreen() {
     const {scrollY} = useOnContentScroll({scrollContainerSelector: '.scroll-container'});
     const {windowHeight, windowWidth} = useWindowDimension();
     const [phaseData, setPhaseData] = useState(phasePlainData);
+    const [phaseScreenTop, setPhaseScreenTop] = useState(-Infinity);
 
     const getPhaseDataWithTriggers = () => {
         const $phaseScreen = document.querySelector(`.phase-screen`) || {offsetTop: -Infinity};
         const phaseScreenTop = $phaseScreen.offsetTop;
         const newPhaseData = [...phaseData];
+        setPhaseScreenTop(phaseScreenTop - windowHeight + triggerBefore);
         phaseData.forEach((phase, index) => {
             const phaseContent = document.querySelector(`.phase-screen .phase-${index + 1}`) || {offsetTop: -Infinity};
             const phaseContentTop = phaseContent.offsetTop;
@@ -62,7 +64,7 @@ export default function PhaseScreen() {
 
     return (
         <div className={"phase-screen"}>
-            <div className={'middle-line'}/>
+            <div className={'middle-line'} style={{height: scrollY >= phaseScreenTop ? '100%' : 0}}/>
             {phaseData.map(({left, right, displayTrigger}, index) => {
                 return <div className={`phase phase-${index + 1}`}
                             key={index}
