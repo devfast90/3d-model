@@ -32,18 +32,19 @@
     @include hideScrollBar();
 
     .text-content {
-      padding: 50vh 10vh 50vh 10vh;
+      --side-padding: 10vh;
+      padding: 80vh var(--side-padding);
       margin: 0px auto;
       max-width: 1100px;
       width: 80vw;
       @include isMobile() {
-        padding: 50vh 5vw 50vh 5vw;
+        --side-padding: 5vh;
         font-size: 30px;
       }
 
       span {
-        color: white;
-        opacity: 0.4;
+        color: #8d8d8d;
+        opacity: 0.5;
         font-size: 60px;
         line-height: 1.7em;
         transition: all 1s;

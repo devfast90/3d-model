@@ -3,7 +3,9 @@ import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio
 import circleActor from "../../../assets/images/circle-screen/cicle-actor.png";
 import Header1 from "../../../shared/components/header1/Header1";
 import Header3 from "../../../shared/components/header3/Header3";
-import {useMemo} from "react";
+import {useLayoutEffect, useState} from "react";
+import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
+import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
 export default function CircleScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({
@@ -29,37 +31,50 @@ export default function CircleScreen({scrollContainerHeight}) {
     );
 }
 
+
+const textContentsStrings = [
+    'The iconic world of JOR ROSS, visionary artist of music, streetwear and pop culture.',
+    'A wild roadmap to make bad influencers the stars of the Metaverse,',
+    'Gamified by the lead writer of this years ASSASSIN’s CREED.',
+    'Metaverse-ready avatars by world-class technical artists.',
+    'Full commitment to reinvest in the IP. A stack of utility announcements to come.'
+];
+
+const TRIGGER_POINT_PERCENTAGE = 70;
+
 function CircleFirstPart({scrollRatio}) {
     const blackText = {color: "black", opacity: 1};
-    const localScrollRatio = useWindowOnScrollRatio({
-        scrollContainerSelector:'.circle-text-container',
-        offsetSelector: '.circle-text-container'
-    });
-    const textContents = useMemo(() => {
-        const textContents = [
-            'The iconic world of JOR ROSS, visionary artist of music, streetwear and pop culture.',
-            'A wild roadmap to make bad influencers the stars of the Metaverse,',
-            'Gamified by the lead writer of this years ASSASSIN’s CREED.',
-            'Metaverse-ready avatars by world-class technical artists.',
-            'Full commitment to reinvest in the IP. A stack of utility announcements to come.'
-        ];
+    const {scrollY} = useOnContentScroll({scrollContainerSelector: '.circle-text-container'});
+    const {windowHeight} = useWindowDimension();
+    const [textContents, setTextContents] = useState(textContentsStrings.map((record)=>({content: record, minScrollTrigger: Infinity})));
 
-        return textContents.map((content, index) => {
-            const initialRatio = 1;
-            const totalParts = textContents.length;
-            const minRatio = index * (initialRatio / totalParts);
-            const maxRatio = Math.min((index + 1) * (initialRatio / totalParts), initialRatio);
-            return {content, minRatio, maxRatio};
-        })
-    }, []);
+    const getTextContents = () => {
+        const minTriggerHeight = Math.round(TRIGGER_POINT_PERCENTAGE * windowHeight / 100);
+        const textContentsArray = [];
+        textContentsStrings.forEach((content, index) => {
+            const $currentTextContent = document.querySelector(`.text-content span:nth-child(${index + 1})`) || {offsetTop: -Infinity};
+            const $nextTextContent = document.querySelector(`.text-content span:nth-child(${index + 2})`) || {offsetTop: Infinity};
+            const minScrollTrigger = $currentTextContent.offsetTop - minTriggerHeight;
+            const maxScrollTrigger = $nextTextContent.offsetTop - minTriggerHeight;
+            textContentsArray.push({content, minScrollTrigger, maxScrollTrigger});
+        });
+        return textContentsArray;
+    };
+
+    useLayoutEffect(() => {
+        setTimeout(()=>{
+            setTextContents(getTextContents());
+        },5000);
+    }, [windowHeight]);
 
     return (
-        <div className={"circle-text-container"} style={{overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll': 'hidden', display: scrollRatio >=1? 'none':'flex'}}>
+        <div className={"circle-text-container"} style={{
+            overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll' : 'hidden',
+            display: scrollRatio >= 1 ? 'none' : 'flex'
+        }}>
             <div className={"text-content"}>
-                {textContents.map(({content, maxRatio, minRatio}, index) => {
-                    return <span style={
-                            localScrollRatio >= minRatio && localScrollRatio <= maxRatio ? blackText : {}
-                    }
+                {textContents.map(({content, minScrollTrigger, maxScrollTrigger}, index) => {
+                    return <span style={scrollY > minScrollTrigger && scrollY < maxScrollTrigger ? blackText : {}}
                                  key={index}>
                          {content}{' '}
                     </span>
@@ -93,7 +108,8 @@ function CircleSecondPart({scrollRatio}) {
                     Who do you want to be?
                 </Header1>
                 <Header3 className={"actor-text-content actor-text-content-secondary"}>
-                    Six avatar<br/>archetypes.<br/><br/>10k Bad Influencers.<br/><br/>All want to be<br/>‘Metaverse famous’
+                    Six avatar<br/>archetypes.<br/><br/>10k Bad Influencers.<br/><br/>All want to be<br/>‘Metaverse
+                    famous’
                 </Header3>
             </div>
         </div>

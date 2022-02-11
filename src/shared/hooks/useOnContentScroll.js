@@ -5,7 +5,7 @@ const getScroll = (event) => ({
     scrollY: (event && event.target && event.target.scrollTop) || 0,
 });
 
-export default function useOnWindowScroll({
+export default function useOnContentScroll({
                                               onlyOnScrollEnd,
                                               scrollContainerSelector='.scroll-container'
 }) {

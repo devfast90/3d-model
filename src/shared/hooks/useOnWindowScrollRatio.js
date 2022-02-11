@@ -1,10 +1,10 @@
 import {useState, useMemo, useEffect} from "react";
-import useOnWindowScroll from "./useOnWindowScroll";
+import useOnContentScroll from "./useOnContentScroll";
 import useWindowDimension from "./useOnWindowDimension";
 import useOnScreen from "./useOnScreen";
 
 export default function useWindowOnScrollRatio({scrollContainerHeight, offsetSelector, scrollContainerSelector}) {
-    const {scrollY} = useOnWindowScroll({scrollContainerSelector});
+    const {scrollY} = useOnContentScroll({scrollContainerSelector});
     const {windowHeight} = useWindowDimension();
     const isOnScreen = useOnScreen({elementSelector: offsetSelector});
     const [offsetValue, setOffsetValue] = useState(0);
