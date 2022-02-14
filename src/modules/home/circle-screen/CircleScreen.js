@@ -1,6 +1,5 @@
 import "./CircleScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import circleActor from "../../../assets/images/circle-screen/cicle-actor.png";
 import Header1 from "../../../shared/components/header1/Header1";
 import Header3 from "../../../shared/components/header3/Header3";
 import {useLayoutEffect, useState} from "react";
@@ -95,20 +94,30 @@ function CircleSecondPart({scrollRatio}) {
 
     return (
         <div className={'circle-second-part-container'}>
-            <img
-                src={circleActor}
-                alt={"circle-actor"}
-                className={"circle-actor-img"}
-                style={circleAnchorImageStyle}
-            />
-            <div className={'side-text-content'} style={textStyle}>
-                <Header1 className={"actor-text-content"}>
+            {scrollRatio >= 0.1 && <div className="video-container" >
+                <video
+                    className={'square-video'}
+                    src={'videos/moving-lights.mp4'}
+                    loop
+                    autoPlay
+                    playsInline
+                    muted
+                ></video>
+            </div>}
+            <div className={'side-text-content'}>
+                {scrollRatio >= 0.1 && <Header1 className={"actor-text-content text-open-animation"}>
                     Who do you want to be?
-                </Header1>
-                <Header3 className={"actor-text-content actor-text-content-secondary"}>
-                    Six avatar<br/>archetypes.<br/><br/>10k Bad Influencers.<br/><br/>All want to be<br/>‘Metaverse
+                </Header1>}
+                {(scrollRatio >= 0.1 && scrollRatio <0.33) && <Header3 className={"actor-text-content text-open-animation"}>
+                    Six avatar<br/>archetypes.<br/>
+                </Header3>}
+                {(scrollRatio >= 0.33 && scrollRatio <=0.66) && <Header3 className={"actor-text-content text-open-animation"}>
+                    <br/>10k Bad Influencers.<br/>
+                </Header3>}
+                {scrollRatio > 0.66 && <Header3 className={"actor-text-content text-open-animation"}>
+                    All want to be<br/>‘Metaverse
                     famous’
-                </Header3>
+                </Header3>}
             </div>
         </div>
     );

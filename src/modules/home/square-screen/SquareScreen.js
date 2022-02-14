@@ -55,7 +55,7 @@ export default function SquareScreen({scrollContainerHeight}) {
                     >
                         <video
                             className={'square-video'}
-                            src={'videos/app-video.mp4'}
+                            src={'videos/square-screen-video.mp4'}
                             loop
                             autoPlay
                             playsInline
