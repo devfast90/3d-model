@@ -16,20 +16,19 @@ export default function App() {
     const [isModelOpen, setIsModelOpen] = useState(true);
     return (
         <>
-            {/*<Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}/>*/}
-            {/*{!isModelOpen &&*/}
-            <div className={'home'}>
+            <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}/>
+            {!isModelOpen && <div className={'home'}>
                 <ScrollContainer>
-                    {/*<ActorScreen scrollContainerHeight={"600vh"} setIsModelOpen={setIsModelOpen}/>*/}
-                    {/*<SquareScreen scrollContainerHeight={"400vh"}/>*/}
-                    {/*<CircleScreen scrollContainerHeight={"600vh"}/>*/}
-                    {/*<FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>*/}
-                    {/*<BlackScreen scrollContainerHeight={"600vh"} />*/}
+                    <ActorScreen scrollContainerHeight={"600vh"} setIsModelOpen={setIsModelOpen}/>
+                    <SquareScreen scrollContainerHeight={"400vh"}/>
+                    <CircleScreen/>
+                    <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
+                    <BlackScreen scrollContainerHeight={"600vh"} />
                     <PhaseScreen useSticky={false}/>
                     <TeamScreen scrollContainerHeight={"600vh"}/>
                     <FooterScreen scrollContainerHeight={"100vh"} hideHeaderFooter/>
                 </ScrollContainer>
-            </div>
+            </div>}
         </>
     );
 }
