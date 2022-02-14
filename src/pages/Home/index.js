@@ -7,6 +7,7 @@ import BlackScreen from "../../modules/home/black-screen/BlackScreen";
 import PhaseScreen from "../../modules/home/phase-screen/PhaseScreen";
 import TeamScreen from "../../modules/home/team-screen/TeamScreen";
 import FooterScreen from "../../modules/home/footer-screen/FooterScreen";
+import LightVideoScreen from "../../modules/home/light-video-screen/LightVideoScreen";
 import './Home.scss';
 import Model from "../Model";
 import {useState} from "react";
@@ -21,7 +22,8 @@ export default function App() {
                 <ScrollContainer>
                     <ActorScreen scrollContainerHeight={"600vh"} setIsModelOpen={setIsModelOpen}/>
                     <SquareScreen scrollContainerHeight={"400vh"}/>
-                    <CircleScreen/>
+                    <CircleScreen scrollContainerHeight={"400vh"}/>
+                    <LightVideoScreen scrollContainerHeight={"400vh"}/>
                     <FashionScreen scrollContainerHeight={fashionScreenHeight} contentHeight={fashionScreenHeight}/>
                     <BlackScreen scrollContainerHeight={"600vh"} />
                     <PhaseScreen useSticky={false}/>

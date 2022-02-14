@@ -25,7 +25,10 @@
       top: 100px;
       width: 80vw;
       .header1{
-        font-size: 40px;
+        font-size: 30px;
+      }
+      img{
+        height: 50px;
       }
     }
   }
@@ -52,8 +55,8 @@
     @include isMobile(){
       height: 200px;
       width: 160px;
-      left: 10%;
-      top: 35%;
+      left: 3%;
+      top: 63%;
     }
   }
 
@@ -64,14 +67,14 @@
     width: var(--video-width);
     position: absolute;
     right: calc(20% - var(--video-width) / 2);
-    bottom: 10%;
+    bottom: 5%;
     transition: opacity 2s;
     @include minMaxMedia(1024px, 1200px){
       right: calc(25% - var(--video-width) / 2);
     }
     @include isMobile(){
-      --video-height: 180px;
-      --video-width: 300px;
+      --video-height: 160px;
+      --video-width: 190px;
       right: 5vw;
     }
   }
