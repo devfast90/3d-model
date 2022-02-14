@@ -43,7 +43,6 @@ export default function TeamScreen({scrollContainerHeight}) {
                     rowStyle = {opacity: 1, transform: 'translateY(0px)'};
                 }
                 return <div className={'team-row'} key={index} style={{paddingLeft: leftPadding, ...rowStyle}}>
-                    {/*<div className={'team-row-container'}>*/}
                     {teamList.slice(index*membersInRow, (index*membersInRow + membersInRow ) )
                         .map(({title, title2, description, imageName}, innerIndex) => {
                             return <div className={'team-member'} key={innerIndex}>
@@ -55,7 +54,6 @@ export default function TeamScreen({scrollContainerHeight}) {
                                 <img src={`/images/team-people/${imageName}.png`}/>
                             </div>
                         })}
-                    {/*</div>*/}
                 </div>
             })}
         </div>
