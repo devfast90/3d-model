@@ -1,4 +1,4 @@
-import "./TeamScreen.css";
+import "./TeamScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import titleIcon from '../../../assets/images/team-screen/title-icon.svg';
 import Header1 from "../../../shared/components/header1/Header1";
@@ -8,6 +8,7 @@ import {useMemo} from "react";
 import {teamListTemp} from "./TeamScreen.data";
 
 const teamList = [...teamListTemp];
+const mobileTrigger = 1250;
 
 export default function TeamScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({
@@ -16,12 +17,16 @@ export default function TeamScreen({scrollContainerHeight}) {
     });
 
     const {windowWidth} = useWindowDimension();
+    const isMobile = mobileTrigger > windowWidth;
 
     const {membersInRow, rows, leftPadding, rowDisplayTrigger} = useMemo(()=>{
         const gutter = 60;
         const memberWidth = 180;
         const unitWidth = memberWidth + gutter;
-        const membersInRow = Math.min(Math.floor((windowWidth - (gutter/2)) / unitWidth), 5);
+        let membersInRow = Math.min(Math.floor((windowWidth - (gutter/2)) / unitWidth), 5);
+        if(windowWidth < mobileTrigger){
+            membersInRow = 5;
+        }
         const rows = Array.from(Array(Math.max(Math.ceil(teamList.length / membersInRow), 1)));
         const leftPadding = (windowWidth - ((Math.min(membersInRow, teamList.length) * unitWidth) - gutter));
         const rowDisplayTrigger = 1 / (rows.length+1);
@@ -31,14 +36,14 @@ export default function TeamScreen({scrollContainerHeight}) {
     const renderTeamList = ()=>{
         return <div className={'team-list'}>
             {rows.map((row, index)=>{
-                let rowStyle = {opacity: 0, transform: 'translateY(280px)'};
+                let rowStyle = {opacity: 0, transform: `translateY(${isMobile ? '100vh':'280px'})`};
                 if(scrollRatio >= rowDisplayTrigger*(index +2)){
-                    rowStyle = {opacity: 0, transform: 'translateY(-280px)'};
+                    rowStyle = {opacity: 0, transform: `translateY(${isMobile ? '-100vh':'-280px'})`};
                 } else if(scrollRatio >= rowDisplayTrigger*(index +1) || (index===0 && scrollRatio >=0)){
                     rowStyle = {opacity: 1, transform: 'translateY(0px)'};
                 }
-                return <div className={'team-row '} key={index}
-                            style={{paddingLeft: leftPadding, ...rowStyle}}>
+                return <div className={'team-row'} key={index} style={{paddingLeft: leftPadding, ...rowStyle}}>
+                    {/*<div className={'team-row-container'}>*/}
                     {teamList.slice(index*membersInRow, (index*membersInRow + membersInRow ) )
                         .map(({title, title2, description, imageName}, innerIndex) => {
                             return <div className={'team-member'} key={innerIndex}>
@@ -50,6 +55,7 @@ export default function TeamScreen({scrollContainerHeight}) {
                                 <img src={`/images/team-people/${imageName}.png`}/>
                             </div>
                         })}
+                    {/*</div>*/}
                 </div>
             })}
         </div>
