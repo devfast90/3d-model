@@ -8,7 +8,6 @@ import useScreenType from "../../../shared/hooks/useScreenType";
 import {useEffect, useLayoutEffect, useState} from "react";
 
 export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
-  const {isMobile} = useScreenType();
   const [isFirstLoad, setIsFirstLoad]= useState(true);
   const scrollRatio = useWindowOnScrollRatio({
     scrollContainerHeight,
@@ -16,11 +15,11 @@ export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
   });
 
   const getTextScrollRatio = (scrollRatio)=>{
-      return isMobile ? Math.min(scrollRatio * 2, 1): scrollRatio;
+      return scrollRatio;
   };
 
   const getImageScrollRatio = (scrollRatio)=>{
-    return isMobile ? Math.min((scrollRatio - 0.5) * 2, 1): scrollRatio;
+    return scrollRatio;
   };
 
   useLayoutEffect(()=>{
@@ -37,17 +36,15 @@ export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
   return (
     <>
       <div className={"actor-screen"}>
-        <ActorScreenText scrollRatio={getTextScrollRatio(scrollRatio)} isMobile={isMobile}/>
-        <ActorScreenImage scrollRatio={getImageScrollRatio(scrollRatio)} isMobile={isMobile}/>
+        <ActorScreenText scrollRatio={getTextScrollRatio(scrollRatio)}/>
+        <ActorScreenImage scrollRatio={getImageScrollRatio(scrollRatio)}/>
       </div>
     </>
   );
 }
 
-function ActorScreenText({scrollRatio, isMobile}){
-  return <>
-    {((isMobile && scrollRatio < 1) || !isMobile) &&
-    <div className={"text-container"}>
+function ActorScreenText({scrollRatio}){
+  return <div className={"text-container"}>
       <div className={'text-content'}>
         <img src={quoteIcon} alt={'quote-icon'}/>
 
@@ -70,16 +67,13 @@ function ActorScreenText({scrollRatio, isMobile}){
             </Header1>
         )}
       </div>
-    </div>}
-  </>
+    </div>
 }
 
 function ActorScreenImage({scrollRatio, isMobile}){
-  return <>
-    {((isMobile && scrollRatio > 0) || !isMobile) && <div className={"image-modal"}>
-      <img src={meshImg} alt={'mesh'} className={`mesh-img ${!isMobile && 'img-open-animation'}`}/>
+  return <div className={"image-modal"}>
+      <img src={meshImg} alt={'mesh'} className={`mesh-img img-open-animation`}/>
       <img src={actorImg} alt={'actor'} className={'actor-img'}
            style={{clipPath: `inset(0% 0% ${100 * (1 - Math.max(scrollRatio, 0))}% 0%)`}}/>
-    </div>}
-  </>
+    </div>
 }
