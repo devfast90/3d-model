@@ -7,7 +7,9 @@ $small-screen-break: 600px;
 .actor-screen {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  @include maxMedia($medium-screen-break) {
+    flex-direction: column;
+  }
 
   .text-container {
     position: relative;
