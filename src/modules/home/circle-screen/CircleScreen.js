@@ -1,6 +1,6 @@
 import "./CircleScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import {useLayoutEffect, useState} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
 import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
@@ -12,7 +12,7 @@ const textContentsStrings = [
     'Full commitment to reinvest in the IP. A stack of utility announcements to come.'
 ];
 
-const TRIGGER_POINT_PERCENTAGE = 70;
+const TRIGGER_POINT_PERCENTAGE = 50;
 
 export default function CircleScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({
@@ -55,7 +55,7 @@ export default function CircleScreen({scrollContainerHeight}) {
             </div>
             <div className={"circle-text-container"} style={{
                 overflowY: scrollRatio > 0 && scrollRatio < 1 ? 'scroll' : 'hidden',
-                display: scrollRatio >= 1 ? 'none' : 'flex'
+                display: scrollRatio >= 1 ? 'none' : 'block'
             }}>
                 <div className={"text-content"}>
                     {textContents.map(({content, minScrollTrigger, maxScrollTrigger}, index) => {
