@@ -4,6 +4,8 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
 
+const MAX_MASK_POSITION = -40;
+
 class Model extends React.Component {
     componentDidMount() {
         // === Creating the Scene, Camera, Renderor ===
@@ -122,11 +124,11 @@ class Model extends React.Component {
 
                 // ============= this.mask model=======
                 this.loader.load(
-                    "3d-models/to_the_top_kitsune_mask/scene.gltf",
+                    "3d-models/mask/scene.gltf",
                     (gltf) => {
                         this.mask = gltf.scene.children[0];
-                        // this.mask.rotateX(3.141592/2);
-                        this.mask.scale.set(80, 40, 80);
+                        this.mask.rotateX(3.141592/2);
+                        this.mask.scale.set(50, 30, 80);
                         this.mask.position.set(0, 30, -60);
                         this.scene.add(this.mask);
                     },
@@ -140,7 +142,7 @@ class Model extends React.Component {
             }
         }
 
-        if (this.camera.position.z < -40 ) {
+        if (this.camera.position.z < -30 ) {
             cancelAnimationFrame(this.animationRequest);
             delete this.animationRequest;
             setIsModelOpen(false);
