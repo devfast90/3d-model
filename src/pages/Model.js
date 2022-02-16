@@ -4,7 +4,7 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
 
-const MAX_MASK_POSITION = -40;
+const MAX_MASK_POSITION = -30;
 
 class Model extends React.Component {
     componentDidMount() {
@@ -22,6 +22,7 @@ class Model extends React.Component {
         const controls = new OrbitControls(this.camera, this.renderer.domElement);
         controls.target.set(0, 15, -43);
         controls.enableRotate = false;
+        controls.zoomSpeed = -1;
         controls.update();
         //========= light ==========
         const ambient_light = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
@@ -142,7 +143,7 @@ class Model extends React.Component {
             }
         }
 
-        if (this.camera.position.z < -30 ) {
+        if (this.camera.position.z < MAX_MASK_POSITION ) {
             cancelAnimationFrame(this.animationRequest);
             delete this.animationRequest;
             setIsModelOpen(false);
