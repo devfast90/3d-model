@@ -15,14 +15,16 @@
     color: white;
     left: 60px;
     width: 500px;
+    z-index: 10;
     @include minMaxMedia(1024px, 1200px){
+      top: 200px;
       .header1{
         font-size: 60px;
       }
     }
     @include isMobile(){
       left: 10vw;
-      top: 100px;
+      top: 150px;
       width: 80vw;
       .header1{
         font-size: 30px;
@@ -55,8 +57,8 @@
     @include isMobile(){
       height: 200px;
       width: 160px;
-      left: 3%;
-      top: 63%;
+      right: 3%;
+      top: 45%;
     }
   }
 
@@ -73,8 +75,8 @@
       right: calc(25% - var(--video-width) / 2);
     }
     @include isMobile(){
-      --video-height: 160px;
-      --video-width: 190px;
+      --video-height: 175px;
+      --video-width: 250px;
       right: 5vw;
     }
   }

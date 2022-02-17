@@ -43,7 +43,7 @@ function BlackScreenMedia({scrollRatio}) {
         <div className={"actor-top-video"}>
             <BlackScreenVideo className={'top'} src={'videos/black-screen/black-screen-top-video.mp4'}/>
         </div>
-        <div className={"actor-bottom-video"} style={{opacity: scrollRatio > 0.1 ? 1 : 0}}>
+        <div className={"actor-bottom-video"} style={{opacity: scrollRatio > 0.02 ? 1 : 0}}>
             <BlackScreenVideo className={'bottom'} src={'videos/black-screen/black-screen-bottom-video.mp4'}/>
         </div>
     </>;
