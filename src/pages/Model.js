@@ -125,20 +125,19 @@ class Model extends React.Component {
 
                 // ============= this.mask model=======
                 this.loader.load(
-                    "3d-models/mask/scene.gltf",
-                    (gltf) => {
-                        this.mask = gltf.scene.children[0];
-                        this.mask.rotateX(3.141592/2);
-                        this.mask.scale.set(50, 30, 80);
-                        this.mask.position.set(0, 30, -60);
-                        this.scene.add(this.mask);
-                    },
-                    (xhr) => {
-                        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-                    },
-                    (error) => {
-                        console.log(error);
-                    }
+                  "3d-models/white/mask.glb",
+                  (gltf) => {
+                    this.mask = gltf.scene.children[0];
+                    this.mask.scale.set(1, 1, 1);
+                    this.mask.position.set(0, -150, -10);
+                    this.scene.add(this.mask);
+                  },
+                  (xhr) => {
+                    console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+                  },
+                  (error) => {
+                    console.log(error);
+                  }
                 );
             }
         }
