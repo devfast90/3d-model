@@ -11,6 +11,14 @@ $max-mobile-trigger: 1250px;
     background: white;
     transition: all 2s;
     padding-top: var(--header-height);
+    .white-mask{
+        position: absolute;
+        top:0px;
+        height: 100px;
+        width: 100vw;
+        z-index: 100;
+        background: white;
+    }
     .title{
         width: 100%;
         text-align: center;
@@ -45,32 +53,32 @@ $max-mobile-trigger: 1250px;
             position: absolute;
             top: 400px;
             flex-wrap: wrap;
+            overflow-y: auto;
+            justify-content: space-around;
+            max-width: calc(100vw - 100px);
+            height: calc(100vh - 350px);
 
             @include maxMedia($max-mobile-trigger){
                 top: 240px;
                 padding-left: 0 !important;
-                justify-content: space-around;
                 height: calc(100vh - 200px);
-                overflow-y: auto;
+                max-width: none;
             }
-
-            //.team-row-container{
-            //    display: flex;
-            //    flex-wrap: wrap;
-            //    justify-content: space-around;
-            //    @include isMobile() {
-            //        height: calc(100vh - 200px);
-            //        overflow-y: auto;
-            //    }
-            //}
 
             .team-member{
                 margin-bottom: 60px;
                 width: 180px;
-                margin-right: 60px;
+                &.hide-description{
+                    .text-container {
+                        min-height: 95px;
+                        @include isMobile() {
+                            min-height: 65px;
+                        }
+                    }
+                }
+                padding: 0px 20px;
                 @include maxMedia($max-mobile-trigger){
                     width: calc(50vw - 119px);
-                    margin-right: 0px;
                     padding: 0px 50px;
                     max-width: 160px;
                 }
