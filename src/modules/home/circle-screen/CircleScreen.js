@@ -13,6 +13,7 @@ const textContentsStrings = [
 ];
 
 const TRIGGER_POINT_PERCENTAGE = 50;
+const MOBILE_VIDEO_TRIGGER = 1080;
 
 export default function CircleScreen({scrollContainerHeight}) {
     const scrollRatio = useWindowOnScrollRatio({
@@ -21,7 +22,7 @@ export default function CircleScreen({scrollContainerHeight}) {
     });
     const blackText = {color: "black", opacity: 1};
     const {scrollY} = useOnContentScroll({scrollContainerSelector: '.circle-text-container'});
-    const {windowHeight} = useWindowDimension();
+    const {windowHeight, windowWidth} = useWindowDimension();
     const [textContents, setTextContents] = useState(textContentsStrings.map((record)=>({content: record, minScrollTrigger: Infinity})));
 
     const getTextContents = () => {
@@ -41,12 +42,24 @@ export default function CircleScreen({scrollContainerHeight}) {
         setTextContents(getTextContents());
     }, [windowHeight]);
 
+    const isMobile = windowWidth <= MOBILE_VIDEO_TRIGGER;
+
     return (
         <div className={"circle-screen"}>
             <div className="video-container">
                 <video
                     className={'square-video'}
+                    style={{display: isMobile? 'none':'block'}}
                     src={'videos/circle-animation-video.mp4'}
+                    loop
+                    autoPlay
+                    playsInline
+                    muted
+                ></video>
+                <video
+                    className={'square-video'}
+                    style={{display: isMobile? 'block':'none'}}
+                    src={'videos/circle-animation-video-mobile.mp4'}
                     loop
                     autoPlay
                     playsInline
