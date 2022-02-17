@@ -32,8 +32,8 @@ const column1Images = [
     {
         imageSrc: armyHelmetImg,
         imageId: 1.4,
-        containerStyle: {height: 463 + 200},
-        imageStyle: {width: 463,  left: '-20%', marginBottom: 200},
+        containerStyle: {height: 463, paddingBottom: 200},
+        imageStyle: {width: 463,  left: '-20%', mobileTop: '90%'},
     },
     // {
     //     imageSrc: pinkJacketImg,
@@ -48,7 +48,7 @@ const column2Images = [
         imageSrc: shoeImg,
         imageId: 2.1,
         containerStyle: {height: 140 + 300},
-        imageStyle: {width: 313, top: 20, left: '30%', marginBottom: 300},
+        imageStyle: {width: 313, top: 20, mobileTop: '70%', left: '30%', marginBottom: 300},
     },
     {
         imageSrc: nopeShirtImg,
@@ -59,14 +59,14 @@ const column2Images = [
     {
         imageSrc: asianDressImg,
         imageId: 2.3,
-        containerStyle: {height: 400 + 300},
-        imageStyle: {width: 400, left: '30%', marginBottom: 300},
+        containerStyle: {height: 400, paddingBottom: 300},
+        imageStyle: {width: 400, left: '30%', mobileTop: '60%'},
     },
     {
         imageSrc: whiteTShirt,
         imageId: 2.4,
-        containerStyle: {height: 400 + 100},
-        imageStyle: {width: 363, left: 30, marginBottom: 100},
+        containerStyle: {height: 400, paddingBottom: 100},
+        imageStyle: {width: 363, left: 30, mobileTop: '20%'},
     },
     // {
     //     imageSrc: snickersImg,

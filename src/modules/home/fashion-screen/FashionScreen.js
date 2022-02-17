@@ -9,13 +9,16 @@ import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
 const initialBottomPosition = '400px';
 const triggerBefore = 200;
+const MOBILE_TRIGGER = 1080;
 
 function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
     const imageRef = useRef();
     const imageClass = `fashion-img-${String(imageId).replace(/\./g, '-')}`;
-    const {windowHeight} = useWindowDimension();
+    const {windowHeight, windowWidth} = useWindowDimension();
+    const isMobile = windowWidth <= MOBILE_TRIGGER;
     const [scrollTrigger, setScrollTrigger] = useState(0);
     const {scrollY} = useOnContentScroll({scrollContainerSelector: '.scroll-container'});
+    const imageStyleFinal = {...imageStyle, top: isMobile ? imageStyle.mobileTop: imageStyle.top};
 
     useLayoutEffect(()=>{
         const fashionScreenTop = document.querySelector('.fashion-screen').parentElement.parentElement.offsetTop;
@@ -35,7 +38,7 @@ function FashionImage({containerStyle, imageStyle, imageSrc, imageId}) {
             src={imageSrc}
             className={imageClass}
             style={{
-                ...imageStyle,
+                ...imageStyleFinal,
                 opacity: imageSrc ? 1 : 0,
                 transform: `translateY(${transformY})`
             }}
