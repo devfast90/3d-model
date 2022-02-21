@@ -3,6 +3,7 @@ import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
+import './Model.scss';
 
 const MAX_MASK_POSITION = -30;
 
@@ -170,6 +171,17 @@ class Model extends React.Component {
         return (
             <div>
                 <div style={{display: isModelOpen ? 'block' : 'none'}} ref={(ref) => (this.mount = ref)}/>
+                <div className={'center-text'}>
+                    <span className={'neon-text'}>
+                    I'
+                    </span>
+                    <span>
+                       &nbsp;M&nbsp;
+                    </span>
+                    <span className={'neon-text'}>
+                        POSSIBLE
+                    </span>
+                </div>
             </div>
         );
     }
