@@ -125,7 +125,7 @@ class Model extends React.Component {
 
                 // ============= this.mask model=======
                 this.loader.load(
-                  "3d-models/white/mask.glb",
+                  "3d-models/red/mask.glb",
                   (gltf) => {
                     this.mask = gltf.scene.children[0];
                     this.mask.scale.set(1, 1, 1);
