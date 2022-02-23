@@ -58,16 +58,16 @@ export default function FashionScreen({scrollContainerHeight}) {
                 <div className={"text-content"}>
                     <img src={quoteIcon} alt={'quote-icon'}/>
                     {scrollRatio < 0 && <Header1 className={`text-open-animation`}>
-                        They’ve got fashion sense!
+                        Dressed to kill.
                     </Header1>}
                     {scrollRatio > 0 && scrollRatio < 0.25 && (
                         <Header1 className={`text-open-animation`}>
-                            Original Jor Ros designs
+                            Made from individual 3D assets
                         </Header1>
                     )}
                     {scrollRatio > 0.25 && scrollRatio < 0.50 && (
                         <Header1 className={`text-open-animation`}>
-                            Full body love, and detailing
+                            Obsessive full body detailing
                         </Header1>
                     )}
                     {scrollRatio > 0.50 && (

@@ -5,11 +5,11 @@ import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
 import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
 const textContentsStrings = [
-    'The iconic world of JOR ROSS, visionary artist of music, streetwear and pop culture.',
-    'A wild roadmap to make bad influencers the stars of the Metaverse,',
-    'Gamified by the lead writer of this years ASSASSIN’s CREED.',
-    'Metaverse-ready avatars by world-class technical artists.',
-    'Full commitment to reinvest in the IP. A stack of utility announcements to come.'
+    'A next generation 10k avatar NFT.',
+    'The iconic world of visionary artist JOR ROS (adidas, Nike, Superplastic.)',
+    "Meta-story by the lead writer of the latest instalment of Assassin's Creed.",
+    '40+ team of 3D and technical artists, and creators.',
+    'A proven founding team of entrepreneurs and creatives with VC backing.'
 ];
 
 const TRIGGER_POINT_PERCENTAGE = 50;

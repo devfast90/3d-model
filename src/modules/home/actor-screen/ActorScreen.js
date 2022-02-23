@@ -50,20 +50,18 @@ function ActorScreenText({scrollRatio}){
 
         {scrollRatio < 0.33 && (
             <Header1 className={`text-content1 text-open-animation`}>
-              Be weird,<br/> dumb, sexy, broken, whatever. <br/> Just not f&$!#g boring.
+              Welcome to <br/> 
+              the Bad Influence Agency (BIA)
             </Header1>
         )}
         {scrollRatio > 0.33 && scrollRatio < 0.66 && (
             <Header1 className={"text-content2 text-open-animation"}>
-              10,000 wayward misfits are rigged <br />
-              and ready to leave web 2.0 behind <br />
-              and take over Metaverse
+              We're a metaverse brand on a mission 
             </Header1>
         )}
         {scrollRatio > 0.66 && (
             <Header1 className={"text-content3 text-open-animation"}>
-              The Bad Influence takeover begins <br/>
-              Early 2022
+              To shake up media and entertainment IRL
             </Header1>
         )}
       </div>

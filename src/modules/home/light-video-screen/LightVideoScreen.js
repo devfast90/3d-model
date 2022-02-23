@@ -39,8 +39,8 @@ export default function LightVideoScreen({scrollContainerHeight, setFontColor}) 
 
 const texts = [
     {content: <>Six avatar<br/>archetypes.<br/></>},
-    {content: <>10k Bad Influencers.</>},
-    {content: <>All want to be<br/>‘Metaverse famous’</>}
+    {content: <>Shared ownership of the BIA</>},
+    {content: <>As we develop and fund “wild originality”</>}
 ];
 
 const INITIAL_ACTIVE_TEXT_INDEX = 0;

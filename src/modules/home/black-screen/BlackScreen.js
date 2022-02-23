@@ -67,22 +67,22 @@ function BlackScreenText({scrollRatio}) {
         <img src={quoteIcon3} alt={'quote-icon'}/>
         {scrollRatio < 0.25 && (
             <Header1 className={`text-open-animation`}>
-                They might be a bit broken inside, but outside they’re perfection.
+                Wanna make your own mark?
             </Header1>
         )}
         {scrollRatio > 0.25 && scrollRatio < 0.5 && (
             <Header1 className={`text-open-animation`}>
-                All 6 archetypes have a single topology
+                Ready to use advanced avatars
             </Header1>
         )}
         {scrollRatio > 0.5 && scrollRatio < 0.75 && (
             <Header1 className={`text-open-animation`}>
-                All attributes dynamically programmed to fit
+                IP rights to make them web3 superstars
             </Header1>
         )}
         {scrollRatio > 0.75 && (
             <Header1 className={`text-open-animation`}>
-                Advanced face rigs (hint)
+                The full backing of the BIA
             </Header1>
         )}
     </div>
