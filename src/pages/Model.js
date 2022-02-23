@@ -3,6 +3,7 @@ import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader";
+import {TextGeometry} from "three/examples/jsm/geometries/TextGeometry";
 import './Model.scss';
 
 const MAX_MASK_POSITION = -30;
@@ -85,11 +86,14 @@ class Model extends React.Component {
                 console.log(error);
             }
         );
+
+
         // ============= male model=======
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath("js/libs/draco/");
         const loader_male = new GLTFLoader();
         loader_male.setDRACOLoader(dracoLoader);
+       
         loader_male.load(
             "3d-models/male.glb",
             (gltf) => {
@@ -107,6 +111,24 @@ class Model extends React.Component {
                 console.log(error);
             }
         );
+
+         const geometry = new TextGeometry( 'Hello three.js!', {
+            size: 80,
+            height: 5,
+            curveSegments: 12,
+            bevelEnabled: true,
+            bevelThickness: 10,
+            bevelSize: 8,
+            bevelOffset: 0,
+            bevelSegments: 5
+        } );
+
+        const material =  new THREE.MeshBasicMaterial( { color: 0xffffff } ) // side
+
+        const textMesh2 = new THREE.Mesh( geometry, material );
+
+        this.scene.add(textMesh2)
+
         this.animate();
     }
 
@@ -121,6 +143,9 @@ class Model extends React.Component {
         const {setIsModelOpen} = this.props;
         if (this.male && this.female) {
             if (!this.male.visible && !this.female.visible) {
+
+                const texture = new THREE.TextureLoader().load( "images/team-people/Ali.png" );
+
                 this.male.visible = true;
                 this.female.visible = true;
 
@@ -169,20 +194,7 @@ class Model extends React.Component {
     render() {
         const {isModelOpen} = this.props;
         return (
-            <div>
-                <div style={{display: isModelOpen ? 'block' : 'none'}} ref={(ref) => (this.mount = ref)}/>
-                <div className={'center-text'}>
-                    <span className={'neon-text'}>
-                    I'
-                    </span>
-                    <span>
-                       &nbsp;M&nbsp;
-                    </span>
-                    <span className={'neon-text'}>
-                        POSSIBLE
-                    </span>
-                </div>
-            </div>
+            <div style={{display: isModelOpen ? 'block' : 'none'}} ref={(ref) => (this.mount = ref)}/>
         );
     }
 }
