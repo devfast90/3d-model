@@ -1,6 +1,5 @@
 import "./TeamScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import titleIcon from '../../../assets/images/team-screen/title-icon.svg';
 import Header1 from "../../../shared/components/header1/Header1";
 import Header3 from "../../../shared/components/header3/Header3";
 import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
@@ -49,7 +48,7 @@ export default function TeamScreen({scrollContainerHeight}) {
                                     <Header3 className={'title'}> {title2}</Header3><br/>
                                     <div className={'description'}> {description}</div>
                                 </div>
-                                <img src={`/images/team-people/${imageName}.png`}/>
+                                <img src={`images/team-people/${imageName}.png`}/>
                             </div>
                         })}
                 </div>
@@ -62,7 +61,7 @@ export default function TeamScreen({scrollContainerHeight}) {
              style={{overflowY:"hidden"}}>
             <div className={'white-mask'}/>
             <div className={'title'}>
-                <img src={titleIcon}/> <br/>
+                <img src='images/team-screen/title-icon.svg'/> <br/>
                 <Header1>The team</Header1>
             </div>
             {renderTeamList()}

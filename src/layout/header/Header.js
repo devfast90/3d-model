@@ -5,12 +5,12 @@ export default function Header({fontColor}) {
     return (
         <div className={"app-header"}>
             {fontColor === FONT_COLORS.WHITE ?
-                <img src='/images/app-white-logo.svg' alt={"app-logo"}/>:
-                <img src='/images/app-black-logo.svg' alt={"app-logo"}/>}
+                <img src='images/app-white-logo.svg' alt={"app-logo"}/>:
+                <img src='images/app-black-logo.svg' alt={"app-logo"}/>}
             <div className={'right-content'}>
                 {fontColor === FONT_COLORS.WHITE ?
-                    <img src='/images/twitter-logo.svg' alt={"twitter-logo"}/> :
-                    <img src='/images/twitter-logo-white.svg' alt={"twitter-logo"}/>
+                    <img src='images/twitter-logo.svg' alt={"twitter-logo"}/> :
+                    <img src='images/twitter-logo-white.svg' alt={"twitter-logo"}/>
                 }
                 {fontColor === FONT_COLORS.WHITE ?
                     <img src='/images/discord-logo-white.svg' alt={"discord-logo"}/> :

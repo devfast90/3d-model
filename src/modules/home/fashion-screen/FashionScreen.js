@@ -3,7 +3,6 @@ import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio
 import Header1 from "../../../shared/components/header1/Header1";
 import {imageList} from "./FashinScreen.data";
 import {useLayoutEffect, useRef, useState} from "react";
-import quoteIcon from "../../../assets/images/quote-icon-2.svg";
 import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
 import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
