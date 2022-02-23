@@ -1,10 +1,8 @@
 import Header1 from "../../../shared/components/header1/Header1";
 import "./ActorScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
-import quoteIcon from "../../../assets/images/quote-icon.svg";
 import actorImg from '../../../assets/images/actor-screen/actor.png';
 import meshImg from '../../../assets/images/actor-screen/mesh.png';
-import useScreenType from "../../../shared/hooks/useScreenType";
 import {useEffect, useLayoutEffect, useState} from "react";
 
 export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
@@ -46,7 +44,7 @@ export default function ActorScreen({ scrollContainerHeight, setIsModelOpen }) {
 function ActorScreenText({scrollRatio}){
   return <div className={"text-container"}>
       <div className={'text-content'}>
-        <img src={quoteIcon} alt={'quote-icon'}/>
+        <img src='/images/quote-icon.svg' alt={'quote-icon'}/>
 
         {scrollRatio < 0.33 && (
             <Header1 className={`text-content1 text-open-animation`}>

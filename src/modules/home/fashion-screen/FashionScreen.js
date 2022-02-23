@@ -56,7 +56,7 @@ export default function FashionScreen({scrollContainerHeight}) {
         <div className={"fashion-screen"}>
             <div className={"text-container"} style={{height: scrollContainerHeight}}>
                 <div className={"text-content"}>
-                    <img src={quoteIcon} alt={'quote-icon'}/>
+                    <img src='images/quote-icon-2.svg' alt={'quote-icon'}/>
                     {scrollRatio < 0 && <Header1 className={`text-open-animation`}>
                         They’ve got fashion sense!
                     </Header1>}
