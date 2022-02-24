@@ -1,6 +1,6 @@
 @font-face {
   font-family: Hanno;
-  src: url(../src/assets/fonts/HanoRegular.otf);
+  src: url('../public/fonts/HanoRegular.otf');
 }
 
 body {
@@ -53,6 +53,5 @@ code {
   }
   100% {
     transform: translateY(0);
-
   }
 }

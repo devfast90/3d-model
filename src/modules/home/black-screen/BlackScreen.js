@@ -1,7 +1,6 @@
 import "./BlackScreen.scss";
 import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio";
 import Header1 from "../../../shared/components/header1/Header1";
-import quoteIcon3 from '../../../assets/images/quote-icon-3.svg';
 import {useEffect} from "react";
 import {FONT_COLORS} from "../scroll-container/ScrollContainer";
 
@@ -64,7 +63,7 @@ function BlackScreenVideo({className, src}){
 function BlackScreenText({scrollRatio}) {
 
     return <div className={"text-container"}>
-        <img src={quoteIcon3} alt={'quote-icon'}/>
+        <img src='/images/quote-icon-3.svg' alt={'quote-icon'}/>
         {scrollRatio < 0.25 && (
             <Header1 className={`text-open-animation`}>
                 Wanna make your own mark?

@@ -3,7 +3,6 @@ import useWindowOnScrollRatio from "../../../shared/hooks/useOnWindowScrollRatio
 import Header1 from "../../../shared/components/header1/Header1";
 import {imageList} from "./FashinScreen.data";
 import {useLayoutEffect, useRef, useState} from "react";
-import quoteIcon from "../../../assets/images/quote-icon-2.svg";
 import useOnContentScroll from "../../../shared/hooks/useOnContentScroll";
 import useWindowDimension from "../../../shared/hooks/useOnWindowDimension";
 
@@ -56,7 +55,7 @@ export default function FashionScreen({scrollContainerHeight}) {
         <div className={"fashion-screen"}>
             <div className={"text-container"} style={{height: scrollContainerHeight}}>
                 <div className={"text-content"}>
-                    <img src={quoteIcon} alt={'quote-icon'}/>
+                    <img src='images/quote-icon-2.svg' alt={'quote-icon'}/>
                     {scrollRatio < 0 && <Header1 className={`text-open-animation`}>
                         Dressed to kill.
                     </Header1>}
