@@ -6,19 +6,19 @@ export default function FooterScreen() {
         <div className={"footer-screen"}>
             <div className={'footer-screen-container'}>
                 <Header3 className={'header-container'}>
-                    COMING EARLY 2022
+                    COMING SOON
                 </Header3>
-                <div className={'logo-container'}>
-                    <img src="images/footer-screen/BadInfluence_Logo.svg" alt={'bad influence'}/>
-                </div>
+                {/*<div className={'logo-container'}>*/}
+                {/*    <img src="images/footer-screen/BadInfluence_Logo.svg" alt={'bad influence'}/>*/}
+                {/*</div>*/}
                 <div className={'footer-container'}>
-                    <img src="images/footer-screen/0-x.png" alt={'o-x'}/>
-                    <div>
+                    <div className={'logo-container'}>
                         <img src="images/footer-screen/footer-white-logo.svg" alt={'footer-logo'}/>
-                        <img src="images/footer-screen/twitter-white-logo.png" alt={'twitter-logo'}/>
+                        <img src="images/twitter-logo-white.png" alt={'twitter-logo'}/>
                     </div>
-                    <div>
-                        ©VEOPLE 2022
+                    <div className={'bottom-section'}>
+                        <div>©VEOPLE 2022</div>
+                        <img src="images/footer-screen/0-x.png" alt={'o-x'}/>
                     </div>
                 </div>
             </div>

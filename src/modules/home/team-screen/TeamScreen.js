@@ -39,7 +39,7 @@ export default function TeamScreen({scrollContainerHeight}) {
                 } else if(scrollRatio >= rowDisplayTrigger*(index +1) || (index===0 && scrollRatio >=0)){
                     rowStyle = {opacity: 1, transform: 'translateY(0px)'};
                 }
-                return <div className={'team-row'} key={index} style={{...rowStyle}}>
+                return <div className={`team-row ${teamList[index].members.length === 6 ? ' six-members': ''}`} key={index} style={{...rowStyle}}>
                     {teamList[index].members
                         .map(({title, title2, description, imageName}, innerIndex) => {
                             return <div className={`team-member ${teamList[index].hideDescription? 'hide-description': ''}`} key={innerIndex}>

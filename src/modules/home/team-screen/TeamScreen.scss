@@ -1,5 +1,7 @@
 @import '../../../scss/__mixin';
 $max-mobile-trigger: 1250px;
+$six-column-min: 1251px;
+$six-column-max: 1420px;
 
 .team-screen{
     display: flex;
@@ -14,7 +16,7 @@ $max-mobile-trigger: 1250px;
     .white-mask{
         position: absolute;
         top:0px;
-        height: 100px;
+        height: var(--header-height);
         width: 100vw;
         z-index: 100;
         background: white;
@@ -65,9 +67,25 @@ $max-mobile-trigger: 1250px;
                 max-width: none;
             }
 
+            &.six-members .team-member{
+                @include minMaxMedia($six-column-min, $six-column-max){
+                    width: 160px;
+                    padding: 0px 10px;
+                    .header3{
+                        font-size: 18px;
+                    }
+                }
+            }
             .team-member{
                 margin-bottom: 60px;
                 width: 180px;
+                padding: 0px 20px;
+
+                @include maxMedia($max-mobile-trigger){
+                    width: calc(50vw - 119px);
+                    padding: 0px 50px;
+                    max-width: 160px;
+                }
                 &.hide-description{
                     .text-container {
                         min-height: 95px;
@@ -75,12 +93,6 @@ $max-mobile-trigger: 1250px;
                             min-height: 65px;
                         }
                     }
-                }
-                padding: 0px 20px;
-                @include maxMedia($max-mobile-trigger){
-                    width: calc(50vw - 119px);
-                    padding: 0px 50px;
-                    max-width: 160px;
                 }
                 &:last-of-type{
                     margin-right: 0px;

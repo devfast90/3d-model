@@ -7,13 +7,9 @@
     position: relative;
     flex: 1;
     color: white;
-    .logo-container{
-        max-width: 80vw;
-        img{
-            height: 140px;
-            width: auto;
-            max-width: 80vw;
-        }
+    .header-container{
+        position: absolute;
+        top: 5%;
     }
     .footer-screen-container{
         z-index: 1;
@@ -40,16 +36,32 @@
         }
     }
     .footer-container{
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
-        width: 80%;
-        @include isMobile(){
-            width: 90%;
+        .logo-container, .bottom-section{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            @include isMobile(){
+                width: 90%;
+            }
+            img{
+                height: 40px;
+                width: auto;
+            }
         }
-        img{
-            height: 40px;
-            width: auto;
+        .logo-container{
+            margin-bottom:100px;
+            width: 40%;
+            img{
+                height: 60px;
+                width: auto;
+            }
         }
     }
 }
