@@ -40,7 +40,7 @@ const column2Images = [
         imageSrc: getImagePath('asian-dress'),
         imageId: 2.3,
         containerStyle: {height: 400, paddingBottom: 300},
-        imageStyle: {width: 400, left: '30%', mobileTop: '60%'},
+        imageStyle: {width: 400, left: '-30%', mobileTop: '70%'},
     },
     {
         imageSrc: getImagePath('white-t-shirt'),

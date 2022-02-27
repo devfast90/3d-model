@@ -31,7 +31,7 @@ export default function CircleScreen({scrollContainerHeight}) {
         textContentsStrings.forEach((content, index) => {
             const $currentTextContent = document.querySelector(`.text-content span:nth-child(${index + 1})`) || {offsetTop: -Infinity};
             const $nextTextContent = document.querySelector(`.text-content span:nth-child(${index + 2})`) || {offsetTop: Infinity};
-            const minScrollTrigger = $currentTextContent.offsetTop - minTriggerHeight;
+            const minScrollTrigger = index === 0 ? -Infinity : $currentTextContent.offsetTop - minTriggerHeight; //Set the first sentence selected by default
             const maxScrollTrigger = $nextTextContent.offsetTop - minTriggerHeight;
             textContentsArray.push({content, minScrollTrigger, maxScrollTrigger});
         });
