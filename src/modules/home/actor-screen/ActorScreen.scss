@@ -70,6 +70,11 @@ $small-screen-break: 600px;
     justify-content: flex-end;
     align-items: center;
     min-height: 800px;
+    width: 50%;
+
+    @include maxMedia($medium-screen-break) {
+      width: auto;
+    }
 
     img {
       height: 90%;

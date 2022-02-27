@@ -15,7 +15,7 @@ export default function FooterScreen() {
                     <img src="images/footer-screen/0-x.png" alt={'o-x'}/>
                     <div>
                         <img src="images/footer-screen/footer-white-logo.svg" alt={'footer-logo'}/>
-                        <img src="images/footer-screen/twitter-white-logo.svg" alt={'twitter-logo'}/>
+                        <img src="images/footer-screen/twitter-white-logo.png" alt={'twitter-logo'}/>
                     </div>
                     <div>
                         ©VEOPLE 2022

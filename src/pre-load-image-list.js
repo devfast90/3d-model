@@ -40,7 +40,7 @@ export const preLoadImageList = [
     'images/footer-screen/twitter-white-logo.svg',
     'images/footer-screen/BadInfluence_Logo.svg',
     'images/header-ox-logo-white.svg',
-    'images/twitter-logo-white.svg',
+    'images/twitter-logo-white.png',
     'images/twitter-logo.svg',
     'images/app-white-logo.svg',
     'images/fashion-screen/asian-dress.png',
