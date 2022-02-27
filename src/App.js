@@ -14,43 +14,46 @@ export default function App() {
         cacheImages();
     }, []);
 
-    const cacheImages = async ()=>{
-        const promises = preLoadImageList.map((src)=>{
-            return new Promise(async (resolve, reject)=>{
+    const cacheImages = async () => {
+        const promises = preLoadImageList.map((src) => {
+            return new Promise(async (resolve, reject) => {
                 const img = new Image();
                 img.src = src;
                 img.onload = resolve;
                 img.onerror = reject;
-            })
+            });
         });
 
         await Promise.all(promises);
         setIsLoading(false);
-    }
+    };
 
     const renderLoader = () => {
-        return <div className="loader-container">
-            <div className="loader">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        return (
+            <div className="loader-container">
+                <video
+                    src="videos/loading.mp4"
+                    className="loader"
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                ></video>
             </div>
-        </div>
-    }
+        );
+    };
+
     const renderMainContent = () => {
         return (
-            <>
-                <Routes>
-                    <Route index element={<Home/>}/>
-                    <Route path="home" element={<Home/>}/>
-                    <Route path="model" element={<Model/>}/>
-                    <Route path="pre-sale" element={<PreSale/>}/>
-                    <Route path="public-sale" element={<PublicSale/>}/>
-                </Routes>
-            </>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path="home" element={<Home />} />
+                <Route path="model" element={<Model />} />
+                <Route path="pre-sale" element={<PreSale />} />
+                <Route path="public-sale" element={<PublicSale />} />
+            </Routes>
         );
-    }
+    };
 
     return isLoading ? renderLoader() : renderMainContent();
 }
